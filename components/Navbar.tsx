@@ -26,7 +26,6 @@ export default function Navbar() {
     { name: 'About Us', href: '/about' },
     { name: 'Initiatives', href: '/initiatives' },
     { name: 'Events', href: '/events' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (path: string) => {
@@ -40,21 +39,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo and Foundation Name */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 overflow-hidden rounded-full border border-stone-200 shadow-xs">
+          <div className="relative h-11 sm:h-12 w-24 sm:w-28 shrink-0">
             <Image
               src={siteConfig.logoUrl}
               alt={siteConfig.name}
               fill
-              sizes="40px"
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 96px, 112px"
+              className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
               priority
             />
           </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-lg text-stone-900 leading-none group-hover:text-[var(--color-primary)] transition">
+          <div className="hidden sm:flex flex-col border-l border-stone-200 pl-3">
+            <span className="font-extrabold text-base lg:text-lg text-stone-900 leading-none group-hover:text-[var(--color-primary)] transition">
               {siteConfig.shortName}
             </span>
-            <span className="text-[10px] font-semibold text-stone-500 tracking-wider uppercase mt-0.5">
+            <span className="text-[10px] font-semibold text-stone-500 tracking-wider uppercase mt-1">
               {siteConfig.tagline}
             </span>
           </div>
@@ -108,6 +107,21 @@ export default function Navbar() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top duration-200">
+          <div className="flex items-center gap-3 pb-3 border-b border-stone-100 mb-2">
+            <div className="relative h-10 w-24 shrink-0">
+              <Image
+                src={siteConfig.logoUrl}
+                alt={siteConfig.name}
+                fill
+                sizes="96px"
+                className="object-contain object-left"
+              />
+            </div>
+            <div>
+              <p className="font-bold text-sm text-stone-900 leading-none">{siteConfig.shortName}</p>
+              <p className="text-[10px] text-stone-500 font-medium mt-0.5">{siteConfig.tagline}</p>
+            </div>
+          </div>
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link

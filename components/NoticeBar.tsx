@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { getNoticeSettings } from '@/lib/services/dataService';
 import { NoticeSettings } from '@/types';
-import { Bell } from 'lucide-react';
+import { Bell, ArrowRight } from 'lucide-react';
 
 export default function NoticeBar() {
   const [notice, setNotice] = useState<NoticeSettings | null>(() => getNoticeSettings());
@@ -23,6 +24,18 @@ export default function NoticeBar() {
   if (!notice || !notice.enabled || !notice.text.trim()) {
     return null;
   }
+
+  const content = (
+    <div
+      className="animate-notice-scroll whitespace-nowrap px-4 font-medium inline-flex items-center gap-2 group-hover:underline cursor-pointer"
+      style={{
+        animationDuration: `${notice.speed || 24}s`,
+      }}
+    >
+      <span>{notice.text}</span>
+      <ArrowRight className="w-3.5 h-3.5 inline shrink-0 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+    </div>
+  );
 
   return (
     <div
@@ -48,14 +61,13 @@ export default function NoticeBar() {
 
         {/* Continuous Marquee Wrapper */}
         <div className="relative flex-1 overflow-hidden">
-          <div
-            className="animate-notice-scroll whitespace-nowrap px-4 font-medium"
-            style={{
-              animationDuration: `${notice.speed || 18}s`,
-            }}
-          >
-            {notice.text}
-          </div>
+          {notice.link ? (
+            <Link href={notice.link} className="block group">
+              {content}
+            </Link>
+          ) : (
+            content
+          )}
         </div>
       </div>
     </div>

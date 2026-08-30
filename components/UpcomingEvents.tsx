@@ -51,16 +51,16 @@ export default function UpcomingEvents() {
         subtitle="Join our upcoming social welfare events, blood donation camps, and environmental drives in Khandesh."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className={`grid gap-8 ${upcomingList.length === 1 ? 'max-w-xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
         {(upcomingList.length > 0 ? upcomingList : events).slice(0, 3).map((event) => (
-          <Card key={event.id} className="flex flex-col h-full group">
-            <div className="relative h-48 w-full overflow-hidden bg-stone-100">
+          <Card key={event.id} className="flex flex-col h-full group border border-amber-200/80 shadow-md">
+            <div className="relative h-60 w-full overflow-hidden bg-stone-900">
               <Image
                 src={event.image || '/bg.jpg'}
                 alt={event.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                className="object-contain group-hover:scale-105 transition-transform duration-500"
                 suppressHydrationWarning
               />
               <div className="absolute top-3 left-3 flex gap-2">
@@ -72,9 +72,14 @@ export default function UpcomingEvents() {
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+              <h3 className="font-serif font-bold text-2xl text-stone-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
                 {event.title}
               </h3>
+              {event.subtitle && (
+                <p className="text-sm font-semibold text-[var(--color-primary)] mb-3">
+                  {event.subtitle}
+                </p>
+              )}
 
               <div className="space-y-2 text-xs text-stone-600 mb-4">
                 <div className="flex items-center gap-2">
@@ -93,19 +98,47 @@ export default function UpcomingEvents() {
                 </div>
               </div>
 
+              {event.prizes && event.prizes.length > 0 && (
+                <div className="mb-4 p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs">
+                  <span className="font-bold text-stone-800 block mb-1">भव्य पारितोषिके:</span>
+                  <div className="flex justify-between text-[11px] font-semibold text-[var(--color-primary)]">
+                    {event.prizes.map((p, idx) => (
+                      <span key={idx}>{p.title}: {p.amount}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <p className="text-stone-600 text-sm line-clamp-2 mb-6 leading-relaxed flex-1">
                 {event.description}
               </p>
 
-              <PrimaryButton
-                onClick={() => setSelectedEvent(event)}
-                variant="primary"
-                size="sm"
-                className="w-full"
-              >
-                <span>Register / Participate</span>
-                <ArrowRight className="w-4 h-4 ml-1.5" />
-              </PrimaryButton>
+              <div className="flex flex-col sm:flex-row gap-3">
+                {event.registrationUrl ? (
+                  <a
+                    href={event.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-4 py-2.5 rounded-xl font-bold text-xs transition shadow-sm"
+                  >
+                    <span>नोंदणी फॉर्म भरा</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <PrimaryButton
+                    onClick={() => setSelectedEvent(event)}
+                    variant="primary"
+                    size="sm"
+                    className="flex-1"
+                  >
+                    <span>Register / Participate</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
+                  </PrimaryButton>
+                )}
+                <PrimaryButton href="/events" variant="outline" size="sm">
+                  <span>सविस्तर माहिती</span>
+                </PrimaryButton>
+              </div>
             </div>
           </Card>
         ))}

@@ -18,6 +18,7 @@ export interface InitiativeItem {
 export interface EventItem {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   date: string;
   time?: string;
@@ -26,6 +27,14 @@ export interface EventItem {
   image: string;
   status: 'Upcoming' | 'Completed';
   featured?: boolean;
+  registrationUrl?: string;
+  entryFee?: string;
+  prizes?: { title: string; amount: string }[];
+  topics?: string[];
+  rounds?: { name: string; date: string }[];
+  contacts?: { district: string; phone: string }[];
+  languages?: string[];
+  ageGroups?: string[];
 }
 
 export interface TeamMember {
@@ -41,15 +50,6 @@ export interface TeamMember {
     email?: string;
   };
   order?: number;
-}
-
-export interface GalleryItem {
-  id: string;
-  title: string;
-  category: 'Education' | 'Blood Donation' | 'Environment' | 'Women Empowerment' | 'Youth Events';
-  image: string;
-  date?: string;
-  description?: string;
 }
 
 export interface ContactMessage {
@@ -79,6 +79,7 @@ export interface NoticeSettings {
   speed: number; // in seconds
   bgColor: string;
   textColor: string;
+  link?: string;
 }
 
 export interface ThemeConfig {

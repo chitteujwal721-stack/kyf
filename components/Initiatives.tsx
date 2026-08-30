@@ -10,7 +10,10 @@ import PrimaryButton from '@/components/ui/PrimaryButton';
 import Modal from '@/components/ui/Modal';
 import { getInitiatives } from '@/lib/services/dataService';
 import { InitiativeItem } from '@/types';
-import { ArrowRight, BookOpen, HeartPulse, Trees, UserCheck, Smile } from 'lucide-react';
+import { ArrowRight, BookOpen, HeartPulse, Trees, UserCheck, Smile, Clock } from 'lucide-react';
+
+// Set to false to restore the full initiatives listing
+const SHOW_COMING_SOON = true;
 
 export default function Initiatives() {
   const [initiatives, setInitiatives] = useState<InitiativeItem[]>(() => getInitiatives());
@@ -51,66 +54,85 @@ export default function Initiatives() {
         subtitle="Empowering communities across Khandesh through structured programs in youth mentoring, education, healthcare, and green conservation."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {initiatives.slice(0, 6).map((item) => (
-          <Card key={item.id} className="flex flex-col h-full group">
-            {/* Image Header */}
-            <div className="relative h-52 w-full overflow-hidden bg-stone-100">
-              <Image
-                src={item.image || '/bg.jpg'}
-                alt={item.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                suppressHydrationWarning
-              />
-              <div className="absolute top-4 left-4">
-                <Badge variant="primary">{item.category}</Badge>
-              </div>
-            </div>
-
-            {/* Card Content */}
-            <div className="p-6 flex flex-col flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                {getIcon(item.iconName)}
-                <h3 className="font-serif font-bold text-xl text-stone-900 group-hover:text-[var(--color-primary)] transition-colors">
-                  {item.title}
-                </h3>
-              </div>
-
-              <p className="text-stone-600 text-sm line-clamp-3 mb-6 leading-relaxed flex-1">
-                {item.description}
-              </p>
-
-              {/* Metrics */}
-              {item.impactMetrics && item.impactMetrics.length > 0 && (
-                <div className="grid grid-cols-2 gap-2 pt-4 border-t border-stone-100 mb-6 bg-amber-50/40 p-3 rounded-xl">
-                  {item.impactMetrics.map((m, idx) => (
-                    <div key={idx} className="text-center">
-                      <p className="font-serif font-bold text-lg text-[var(--color-primary)]">{m.value}</p>
-                      <p className="text-[11px] text-stone-500 font-medium">{m.label}</p>
-                    </div>
-                  ))}
+      {SHOW_COMING_SOON ? (
+        <div className="max-w-xl mx-auto py-12 px-6 text-center bg-stone-50/80 rounded-2xl border border-stone-200">
+          <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-100 flex items-center justify-center text-[var(--color-primary)]">
+            <Clock className="w-7 h-7" />
+          </div>
+          <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-amber-50 text-[var(--color-primary)] border border-amber-200 inline-block mb-2">
+            Status Notice
+          </span>
+          <h3 className="text-2xl font-serif font-bold text-stone-900 mb-2">
+            Will be updated soon
+          </h3>
+          <p className="text-stone-600 text-sm leading-relaxed max-w-md mx-auto">
+            Our initiatives and community outreach programs are currently being updated.
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {initiatives.slice(0, 6).map((item) => (
+              <Card key={item.id} className="flex flex-col h-full group">
+                {/* Image Header */}
+                <div className="relative h-52 w-full overflow-hidden bg-stone-100">
+                  <Image
+                    src={item.image || '/bg.jpg'}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    suppressHydrationWarning
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="primary">{item.category}</Badge>
+                  </div>
                 </div>
-              )}
 
-              <button
-                onClick={() => setSelectedInitiative(item)}
-                className="inline-flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] transition-colors pt-2"
-              >
-                <span>Read Overview</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </Card>
-        ))}
-      </div>
+                {/* Card Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    {getIcon(item.iconName)}
+                    <h3 className="font-serif font-bold text-xl text-stone-900 group-hover:text-[var(--color-primary)] transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
 
-      <div className="mt-12 text-center">
-        <PrimaryButton href="/initiatives" variant="outline" size="lg">
-          View All Initiatives
-        </PrimaryButton>
-      </div>
+                  <p className="text-stone-600 text-sm line-clamp-3 mb-6 leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+
+                  {/* Metrics */}
+                  {item.impactMetrics && item.impactMetrics.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2 pt-4 border-t border-stone-100 mb-6 bg-amber-50/40 p-3 rounded-xl">
+                      {item.impactMetrics.map((m, idx) => (
+                        <div key={idx} className="text-center">
+                          <p className="font-serif font-bold text-lg text-[var(--color-primary)]">{m.value}</p>
+                          <p className="text-[11px] text-stone-500 font-medium">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => setSelectedInitiative(item)}
+                    className="inline-flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] transition-colors pt-2"
+                  >
+                    <span>Read Overview</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <PrimaryButton href="/initiatives" variant="outline" size="lg">
+              View All Initiatives
+            </PrimaryButton>
+          </div>
+        </>
+      )}
 
       {/* Modal */}
       <Modal

@@ -9,7 +9,6 @@ A full-stack, production-ready web application built for **Khandesh Youth Founda
 ### Public Website
 - **Logo-Inspired Theme**: Custom design system using Deep Warm Brown (`#5D3A1A`), Sky Blue/Teal (`#0EA5E9`), Leaf Green (`#16A34A`), and Warm Ivory White (`#FDFBF7`).
 - **Scrolling Notice Bar**: Continuous horizontal marquee ticker for NGO announcements.
-- **Interactive Lightbox Gallery**: Photo gallery with category filtering and keyboard arrow navigation (Left, Right, Escape).
 - **Dynamic Events Calendar**: Event grid with `Upcoming` and `Completed` status tags and volunteer registration modal.
 - **Donation & UPI Portal**: Scan-to-pay QR code, one-click **Copy UPI ID** button, direct bank transfer details, and impact tiers.
 - **Contact & Location**: Interactive contact form, WhatsApp button, and embedded Google Maps location frame.
@@ -25,7 +24,6 @@ khandesh-youth-foundation/
 │   ├── contact/              # Contact Us page
 │   ├── donate/               # Support & UPI Donation page
 │   ├── events/               # Events calendar page
-│   ├── gallery/              # Photo gallery with Lightbox
 │   ├── initiatives/          # Social initiatives page
 │   ├── globals.css           # Global CSS variables & marquee keyframes
 │   ├── layout.tsx            # Root layout with ThemeProvider
@@ -39,13 +37,12 @@ khandesh-youth-foundation/
 │   ├── About.tsx             # About section
 │   ├── Initiatives.tsx       # Initiatives grid & modal
 │   ├── UpcomingEvents.tsx    # Events preview & registration modal
-│   ├── GalleryPreview.tsx    # Gallery preview grid
 │   ├── Team.tsx              # Team members grid
 │   ├── VolunteerCTA.tsx      # Call to action banner
 │   ├── ThemeProvider.tsx     # Dynamic CSS variable injector
 │   └── Footer.tsx            # Site footer
 ├── config/                   # Site default configuration (site.ts)
-├── data/                     # Data models and datasets (events, initiatives, team, gallery)
+├── data/                     # Data models and datasets (events, initiatives, team)
 ├── lib/                      # Libraries & service layer
 │   └── services/             # Clean data services (dataService.ts)
 ├── public/                   # Static images, branding logo, and media

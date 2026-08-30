@@ -28,8 +28,8 @@ export default function About() {
           </div>
           {/* Overlapping Badge Card */}
           <div className="absolute -bottom-6 -right-2 sm:-bottom-8 sm:right-6 bg-white p-5 rounded-2xl shadow-xl border border-stone-100 max-w-xs flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0 text-[var(--color-primary)] font-bold text-xl font-serif">
-              KYF
+            <div className="relative h-12 w-20 rounded-xl overflow-hidden bg-white p-1 border border-stone-200 shrink-0 shadow-2xs">
+              <Image src="/logo.png" alt="KYF Logo" fill sizes="80px" className="object-contain" />
             </div>
             <div>
               <p className="text-xs text-stone-500 uppercase tracking-wider font-semibold">Established</p>

@@ -30,9 +30,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: NGO Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3.5">
-              <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-amber-50 p-1.5 border border-amber-200/30">
-                <Image src="/logo.png" alt="KYF Logo" fill className="object-contain" />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3.5">
+              <div className="relative h-14 w-28 rounded-xl overflow-hidden bg-white p-1.5 border border-stone-700/60 shadow-md shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="KYF Logo"
+                  fill
+                  sizes="112px"
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h2 className="font-serif font-bold text-xl text-white tracking-tight leading-tight">
@@ -67,7 +73,6 @@ export default function Footer() {
                 { name: 'About Us', href: '/about' },
                 { name: 'Social Initiatives', href: '/initiatives' },
                 { name: 'Events Calendar', href: '/events' },
-                { name: 'Photo Gallery', href: '/gallery' },
                 { name: 'Donate & Support', href: '/donate' },
                 { name: 'Contact Us', href: '/contact' },
               ].map((link) => (

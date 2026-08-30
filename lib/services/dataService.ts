@@ -1,11 +1,9 @@
 import { siteConfig } from '@/config/site';
 import { initialEvents } from '@/data/events';
-import { initialGallery } from '@/data/gallery';
 import { initialInitiatives } from '@/data/initiatives';
 import { initialTeam } from '@/data/team';
 import {
   EventItem,
-  GalleryItem,
   InitiativeItem,
   NoticeSettings,
   SiteSettings,
@@ -15,10 +13,11 @@ import {
 
 export const defaultNoticeSettings: NoticeSettings = {
   enabled: true,
-  text: '🚩 Urgent Blood Drive in Dhule Civil Hospital this Sunday from 9 AM to 4 PM. All blood groups needed!',
-  speed: 18,
+  text: '🚩 शब्दभूषण २०२६: खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा! 🏆 भव्य पारितोषिके ₹१०,०००/-, ₹७,०००/-, ₹५,०००/- | नोंदणी अंतिम तारीख: १४ सप्टेंबर २०२६ | सविस्तर माहिती व ऑनलाईन नोंदणीसाठी येथे क्लिक करा किंवा Events विभागाला भेट द्या! (Online Registration Open)',
+  speed: 26,
   bgColor: '#5D3A1A',
   textColor: '#FDFBF7',
+  link: '/events',
 };
 
 export const defaultThemeConfig: ThemeConfig = {
@@ -53,7 +52,6 @@ export const defaultSiteSettings: SiteSettings = {
 export const getEvents = (): EventItem[] => initialEvents;
 export const getInitiatives = (): InitiativeItem[] => initialInitiatives;
 export const getTeam = (): TeamMember[] => initialTeam;
-export const getGallery = (): GalleryItem[] => initialGallery;
 export const getNoticeSettings = (): NoticeSettings => defaultNoticeSettings;
 export const getThemeConfig = (): ThemeConfig => defaultThemeConfig;
 export const getSiteSettings = (): SiteSettings => defaultSiteSettings;

@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     'Tree Plantation Khandesh',
     'Youth Empowerment',
   ],
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({
