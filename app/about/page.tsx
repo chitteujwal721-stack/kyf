@@ -6,7 +6,6 @@ import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import VolunteerCTA from '@/components/VolunteerCTA';
-import Team from '@/components/Team';
 import { Target, Eye, Heart, Award, ShieldCheck, Users } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
@@ -17,15 +16,15 @@ export default function AboutPage() {
       <NoticeBar />
 
       {/* Hero Banner */}
-      <section className="bg-theme-primary text-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-theme-primary text-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="px-3.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/20 text-white border border-white/30 mb-4 inline-block">
+          <span className="px-3.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/20 text-white border border-white/30 mb-3 sm:mb-4 inline-block">
             About Our NGO
           </span>
-          <h1 className="text-4xl sm:text-6xl font-serif font-bold tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight">
             Our Journey & Vision
           </h1>
-          <p className="mt-4 text-amber-100 text-lg max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-amber-100 text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
             {siteConfig.description}
           </p>
         </div>
@@ -33,23 +32,23 @@ export default function AboutPage() {
 
       {/* Mission & Vision Cards */}
       <Section bg="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="p-8 border-l-4 border-l-[var(--color-primary)]">
-            <div className="w-12 h-12 rounded-xl bg-amber-100 text-[var(--color-primary)] flex items-center justify-center mb-4">
-              <Target className="w-6 h-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <Card className="p-5 sm:p-8 border-l-4 border-l-[var(--color-primary)]">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-100 text-[var(--color-primary)] flex items-center justify-center mb-4">
+              <Target className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-stone-900 mb-3">Our Mission</h3>
-            <p className="text-stone-600 leading-relaxed text-sm">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-2 sm:mb-3">Our Mission</h3>
+            <p className="text-stone-600 leading-relaxed text-xs sm:text-sm">
               To empower the youth of Khandesh through accessible education, skill-building workshops, emergency healthcare support, and environmental stewardship, creating a self-sustaining and compassionate society.
             </p>
           </Card>
 
-          <Card className="p-8 border-l-4 border-l-[var(--color-secondary)]">
-            <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-4">
-              <Eye className="w-6 h-6" />
+          <Card className="p-5 sm:p-8 border-l-4 border-l-[var(--color-secondary)]">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-4">
+              <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-stone-900 mb-3">Our Vision</h3>
-            <p className="text-stone-600 leading-relaxed text-sm">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-2 sm:mb-3">Our Vision</h3>
+            <p className="text-stone-600 leading-relaxed text-xs sm:text-sm">
               A vibrant Khandesh region where every young person has equal access to growth opportunities, healthcare support is readily available, and environmental consciousness is deeply ingrained in community life.
             </p>
           </Card>
@@ -99,9 +98,6 @@ export default function AboutPage() {
           })}
         </div>
       </Section>
-
-      {/* Team Preview */}
-      <Team />
 
       <VolunteerCTA />
 

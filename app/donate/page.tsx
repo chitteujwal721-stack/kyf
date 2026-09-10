@@ -43,64 +43,55 @@ export default function DonatePage() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const impactTiers = [
-    { amount: '₹100', text: 'Provides essential notebooks & stationery kits to 1 student.' },
-    { amount: '₹500', text: 'Funds emergency transportation for voluntary blood donors.' },
-    { amount: '₹1,000', text: 'Sponsors 10 native tree saplings with tree guards for green drives.' },
-    { amount: 'Any Amount', text: 'Directly supports our 24/7 social service emergency helpline.' },
-  ];
+
 
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <NoticeBar />
 
-      <section className="bg-theme-primary text-white py-16 md:py-20 text-center">
+      <section className="bg-theme-primary text-white py-12 sm:py-16 md:py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <span className="px-3.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/20 text-white border border-white/30 mb-3 inline-block">
             Support Our Mission
           </span>
-          <h1 className="text-4xl sm:text-6xl font-serif font-bold">Donate to KYF</h1>
-          <p className="mt-4 text-amber-100 text-lg max-w-2xl mx-auto font-light">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold">Donate to KYF</h1>
+          <p className="mt-4 text-amber-100 text-base sm:text-lg max-w-2xl mx-auto font-light">
             Your generous contribution fuels educational kits, blood donation helplines, and environmental conservation in Khandesh.
           </p>
         </div>
       </section>
 
       <Section bg="main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* QR Code Card */}
-          <Card className="p-8 text-center border-2 border-amber-200">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-[var(--color-primary)] text-xs font-bold uppercase tracking-wider mb-6">
+          <Card className="p-4 sm:p-8 text-center border-2 border-amber-200/90 shadow-xl bg-white rounded-3xl">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-amber-100 text-[var(--color-primary)] text-xs font-extrabold uppercase tracking-wider mb-4 sm:mb-6">
               <QrCode className="w-4 h-4" />
-              <span>UPI Scan & Pay</span>
+              <span>Official UPI QR Code • Scan & Pay</span>
             </div>
 
-            <div className="relative w-64 h-64 mx-auto p-4 bg-white rounded-2xl border border-stone-200 shadow-md mb-6 flex items-center justify-center">
+            {/* QR Image Container */}
+            <div className="relative w-56 h-56 xs:w-64 xs:h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto p-3 sm:p-4 bg-white rounded-2xl border-2 border-amber-200 shadow-md mb-6 flex items-center justify-center overflow-hidden">
               <Image
                 src="/qr-code.png"
-                alt="Donation UPI QR Code"
+                alt="Khandesh Youth Foundation UPI QR Code"
                 fill
+                sizes="(max-width: 640px) 240px, 320px"
                 className="object-contain p-2"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+                priority
               />
-              <div className="text-center p-4">
-                <QrCode className="w-20 h-20 text-[var(--color-primary)] mx-auto mb-2 opacity-80" />
-                <p className="text-xs text-stone-500 font-medium">Scan using GPay, PhonePe, Paytm, BHIM</p>
-              </div>
             </div>
 
             {/* UPI Copy Box */}
-            <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-md mx-auto">
-              <div className="text-left">
-                <p className="text-[11px] text-stone-500 font-semibold uppercase">Official UPI ID</p>
-                <p className="text-lg font-bold text-[var(--color-primary)] font-mono">{upi.id}</p>
+            <div className="bg-amber-50/60 p-3.5 sm:p-4 rounded-2xl border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-md mx-auto">
+              <div className="text-center sm:text-left min-w-0">
+                <p className="text-[11px] text-stone-500 font-bold uppercase tracking-wide">Official UPI ID</p>
+                <p className="text-base sm:text-lg font-mono font-extrabold text-[var(--color-primary)] tracking-tight truncate">{upi.id}</p>
               </div>
               <button
                 onClick={handleCopyUPI}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-4 py-2 rounded-lg text-xs font-bold transition shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-2.5 rounded-xl text-xs font-bold transition shadow-sm"
               >
                 {copied ? (
                   <>
@@ -116,54 +107,54 @@ export default function DonatePage() {
               </button>
             </div>
 
-            <p className="text-stone-500 text-xs mt-4">
-              Accepted through Google Pay, PhonePe, Paytm, Amazon Pay, or any UPI app.
+            <p className="text-stone-500 text-xs mt-4 font-medium leading-relaxed">
+              Scan directly using Google Pay, PhonePe, Paytm, BHIM, Amazon Pay, or any bank UPI app.
             </p>
           </Card>
 
           {/* Bank Details Card */}
           <div className="space-y-6">
-            <Card className="p-8">
+            <Card className="p-4 sm:p-8 border border-stone-200 shadow-lg bg-white rounded-3xl">
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-stone-100">
-                <div className="p-3 bg-amber-100 text-[var(--color-primary)] rounded-xl">
+                <div className="p-3 bg-amber-100 text-[var(--color-primary)] rounded-2xl shrink-0">
                   <Building2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-serif font-bold text-stone-900">Direct Bank Transfer</h3>
-                  <p className="text-xs text-stone-500">NEFT / RTGS / IMPS Account Information</p>
+                  <h3 className="text-lg sm:text-xl font-serif font-bold text-stone-900">Direct Bank Transfer</h3>
+                  <p className="text-xs text-stone-500 font-medium">NEFT / RTGS / IMPS Official Account</p>
                 </div>
               </div>
 
-              <div className="space-y-4 text-sm">
-                <div className="flex justify-between py-2 border-b border-stone-100">
+              <div className="space-y-3.5 sm:space-y-4 text-xs sm:text-sm">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-stone-100 gap-0.5 sm:gap-1">
                   <span className="text-stone-500 font-medium">Account Name</span>
                   <span className="font-bold text-stone-900">{upi.accountName}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-stone-100">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-stone-100 gap-0.5 sm:gap-1">
                   <span className="text-stone-500 font-medium">Bank Name</span>
                   <span className="font-bold text-stone-900">{upi.bankName}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-stone-100">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-stone-100 gap-0.5 sm:gap-1">
                   <span className="text-stone-500 font-medium">Account Number</span>
-                  <span className="font-bold text-stone-900 font-mono">{upi.accountNumber}</span>
+                  <span className="font-mono font-extrabold text-sm sm:text-base text-[var(--color-primary)] break-all">{upi.accountNumber}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-stone-100">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-stone-100 gap-0.5 sm:gap-1">
                   <span className="text-stone-500 font-medium">IFSC Code</span>
-                  <span className="font-bold text-stone-900 font-mono">{upi.ifsc}</span>
+                  <span className="font-mono font-extrabold text-sm sm:text-base text-[var(--color-primary)]">{upi.ifsc}</span>
                 </div>
                 {upi.branch && (
-                  <div className="flex justify-between py-2">
+                  <div className="flex flex-col sm:flex-row sm:justify-between py-2 gap-0.5 sm:gap-1">
                     <span className="text-stone-500 font-medium">Branch</span>
                     <span className="font-bold text-stone-900">{upi.branch}</span>
                   </div>
                 )}
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200 flex items-start gap-3">
+              <div className="mt-6 p-3.5 sm:p-4 bg-amber-50/80 rounded-2xl border border-amber-200 flex items-start gap-2.5 sm:gap-3">
                 <ShieldCheck className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-0.5" />
-                <p className="text-xs text-stone-700 leading-relaxed">
+                <p className="text-xs text-stone-700 leading-relaxed font-medium">
                   All donations go directly toward community welfare drives. Receipts can be requested by emailing your payment screenshot to{' '}
-                  <span className="font-bold text-[var(--color-primary)]">contact@khandeshyouthfoundation.org</span>.
+                  <span className="font-bold text-[var(--color-primary)] break-all">contact@khandeshyouthfoundation.org</span>.
                 </p>
               </div>
             </Card>
@@ -177,16 +168,7 @@ export default function DonatePage() {
             title="How Your Donation Helps"
             subtitle="Every contribution directly supports grassroot programs."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {impactTiers.map((tier, idx) => (
-              <Card key={idx} className="p-6 text-center border-t-4 border-t-[var(--color-primary)]">
-                <p className="text-3xl font-serif font-bold text-[var(--color-primary)] mb-2">
-                  {tier.amount}
-                </p>
-                <p className="text-xs text-stone-600 leading-relaxed font-medium">{tier.text}</p>
-              </Card>
-            ))}
-          </div>
+
         </div>
       </Section>
 

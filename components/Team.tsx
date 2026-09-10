@@ -38,7 +38,7 @@ export default function Team() {
           <Card key={member.id} className="text-center p-6 flex flex-col items-center group">
             <div className="relative w-36 h-36 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg bg-stone-100 group-hover:scale-105 transition-transform duration-300">
               <Image
-                src={member.image || '/bg.jpg'}
+                src={member.image || '/logo.png'}
                 alt={member.name}
                 fill
                 sizes="(max-width: 640px) 100vw, 25vw"

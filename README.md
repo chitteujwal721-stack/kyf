@@ -24,7 +24,6 @@ khandesh-youth-foundation/
 │   ├── contact/              # Contact Us page
 │   ├── donate/               # Support & UPI Donation page
 │   ├── events/               # Events calendar page
-│   ├── initiatives/          # Social initiatives page
 │   ├── globals.css           # Global CSS variables & marquee keyframes
 │   ├── layout.tsx            # Root layout with ThemeProvider
 │   └── page.tsx              # Homepage
@@ -35,14 +34,13 @@ khandesh-youth-foundation/
 │   ├── Hero.tsx              # Hero banner
 │   ├── Stats.tsx             # Impact counters
 │   ├── About.tsx             # About section
-│   ├── Initiatives.tsx       # Initiatives grid & modal
 │   ├── UpcomingEvents.tsx    # Events preview & registration modal
 │   ├── Team.tsx              # Team members grid
 │   ├── VolunteerCTA.tsx      # Call to action banner
 │   ├── ThemeProvider.tsx     # Dynamic CSS variable injector
 │   └── Footer.tsx            # Site footer
 ├── config/                   # Site default configuration (site.ts)
-├── data/                     # Data models and datasets (events, initiatives, team)
+├── data/                     # Data models and datasets (events, team)
 ├── lib/                      # Libraries & service layer
 │   └── services/             # Clean data services (dataService.ts)
 ├── public/                   # Static images, branding logo, and media

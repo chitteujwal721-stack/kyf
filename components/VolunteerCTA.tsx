@@ -13,20 +13,20 @@ export default function VolunteerCTA() {
           <span>Join the Movement</span>
         </div>
 
-        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
           Ready to Make a Difference in Khandesh?
         </h2>
 
-        <p className="mt-4 text-base sm:text-lg text-amber-100 font-light leading-relaxed">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-amber-100 font-light leading-relaxed">
           Whether you want to volunteer for blood donation camps, plant trees, mentor rural students, or contribute financially — your support transforms lives.
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
           <a
             href={siteConfig.joinUsFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white px-8 py-3.5 rounded-xl font-bold text-base transition shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition shadow-lg"
           >
             <UserPlus className="w-5 h-5" />
             <span>Become a Volunteer</span>
@@ -36,7 +36,7 @@ export default function VolunteerCTA() {
             href="/donate"
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto border-white text-white hover:bg-white/10"
+            className="w-full sm:w-auto border-white text-white hover:bg-white/10 justify-center"
           >
             <Heart className="w-5 h-5 mr-2 fill-white/30" />
             <span>Donate Now</span>

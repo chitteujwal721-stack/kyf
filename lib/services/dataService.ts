@@ -1,10 +1,8 @@
 import { siteConfig } from '@/config/site';
 import { initialEvents } from '@/data/events';
-import { initialInitiatives } from '@/data/initiatives';
 import { initialTeam } from '@/data/team';
 import {
   EventItem,
-  InitiativeItem,
   NoticeSettings,
   SiteSettings,
   TeamMember,
@@ -13,8 +11,8 @@ import {
 
 export const defaultNoticeSettings: NoticeSettings = {
   enabled: true,
-  text: '🚩 शब्दभूषण २०२६: खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा! 🏆 भव्य पारितोषिके ₹१०,०००/-, ₹७,०००/-, ₹५,०००/- | नोंदणी अंतिम तारीख: १४ सप्टेंबर २०२६ | सविस्तर माहिती व ऑनलाईन नोंदणीसाठी येथे क्लिक करा किंवा Events विभागाला भेट द्या! (Online Registration Open)',
-  speed: 26,
+  text: '🚩 शब्दभूषण २०२६: जिल्हास्तरीय वक्तृत्व स्पर्धा! नोंदणी सुरू — अंतिम मुदत: १४ सप्टेंबर २०२६ | Shabdabhushan 2026: District Level Elocution Competition! Last Date: 14 Sep 2026. Click here to Register Now! 🏆',
+  speed: 24,
   bgColor: '#5D3A1A',
   textColor: '#FDFBF7',
   link: '/events',
@@ -50,7 +48,6 @@ export const defaultSiteSettings: SiteSettings = {
 };
 
 export const getEvents = (): EventItem[] => initialEvents;
-export const getInitiatives = (): InitiativeItem[] => initialInitiatives;
 export const getTeam = (): TeamMember[] => initialTeam;
 export const getNoticeSettings = (): NoticeSettings => defaultNoticeSettings;
 export const getThemeConfig = (): ThemeConfig => defaultThemeConfig;

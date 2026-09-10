@@ -26,8 +26,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-theme-footer text-stone-300 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Col 1: NGO Brand */}
           <div className="space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center gap-3.5">
@@ -71,7 +71,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs">
               {[
                 { name: 'About Us', href: '/about' },
-                { name: 'Social Initiatives', href: '/initiatives' },
                 { name: 'Events Calendar', href: '/events' },
                 { name: 'Donate & Support', href: '/donate' },
                 { name: 'Contact Us', href: '/contact' },
@@ -92,23 +91,13 @@ export default function Footer() {
           {/* Col 3: Contact Info */}
           <div>
             <h3 className="font-serif font-bold text-white text-base mb-4 border-b border-stone-800 pb-2">
-              Contact & Address
+              Contact Helpline
             </h3>
             <ul className="space-y-3 text-xs text-stone-400">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{config.address}</span>
-              </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`tel:${config.phone}`} className="hover:text-white transition">
-                  {config.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-sky-400 shrink-0" />
-                <a href={`mailto:${config.email}`} className="hover:text-white transition">
-                  {config.email}
+                <a href={`tel:${config.phone || '+919421098906'}`} className="hover:text-white transition font-bold text-sm text-stone-200">
+                  {config.phone || '+91 9421098906'}
                 </a>
               </li>
             </ul>

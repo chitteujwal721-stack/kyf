@@ -4,9 +4,8 @@ import NoticeBar from '@/components/NoticeBar';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import About from '@/components/About';
-import Initiatives from '@/components/Initiatives';
-import UpcomingEvents from '@/components/UpcomingEvents';
-import Team from '@/components/Team';
+
+import ShabdabhushanBanner from '@/components/ShabdabhushanBanner';
 import VolunteerCTA from '@/components/VolunteerCTA';
 import Footer from '@/components/Footer';
 
@@ -15,12 +14,11 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <NoticeBar />
+      <ShabdabhushanBanner />
       <Hero />
       <Stats />
       <About />
-      <Initiatives />
-      <UpcomingEvents />
-      <Team />
+
       <VolunteerCTA />
       <Footer />
     </main>

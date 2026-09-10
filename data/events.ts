@@ -4,9 +4,9 @@ export const initialEvents: EventItem[] = [
   {
     id: 'evt-shabdabhushan-2026',
     title: 'शब्दभूषण २०२६',
-    subtitle: 'खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा',
+    subtitle: 'खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा',
     description:
-      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.',
+      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.',
     date: '२९ ऑगस्ट ते २६ ऑक्टोबर २०२६',
     time: 'नोंदणी: २९ ऑगस्ट ते १४ सप्टेंबर',
     location: 'खान्देश (धुळे, जळगाव, मालेगाव, नंदुरबार)',
@@ -42,5 +42,42 @@ export const initialEvents: EventItem[] = [
     ],
     languages: ['मराठी', 'अहिराणी', 'इंग्रजी'],
     ageGroups: ['१४ ते १८', '१८ ते २५', '२५+ खुला'],
+
+    // Exact English details
+    titleEn: 'Shabdabhushan 2026',
+    subtitleEn: "Khandesh's Grandest District Level Elocution & Oratory Competition",
+    descriptionEn:
+      'Organized by Khandesh Youth Foundation, the grandest district-level elocution competition in Khandesh. A prestigious platform designed to foster thought leadership, articulate oratorical skills, and youth empowerment.',
+    dateEn: '29 August to 26 October 2026',
+    timeEn: 'Registration: 29 Aug to 14 Sep',
+    locationEn: 'Khandesh (Dhule, Jalgaon, Malegaon, Nandurbar)',
+    entryFeeEn: '₹150/-',
+    prizesEn: [
+      { title: '1st Prize', amount: '₹10,000/-' },
+      { title: '2nd Prize', amount: '₹7,000/-' },
+      { title: '3rd Prize', amount: '₹5,000/-' },
+    ],
+    topicsEn: [
+      'Dialogue shapes the future.',
+      'Let India become mighty and shine across the universe.',
+      'Trees and nature are our kin: My Earth, My Family.',
+      'Sustainable Development: A crucial goal for a developed Khandesh.',
+      "Today's Youth, Khandesh's Future: Agriculture, Industry, and Development.",
+    ],
+    roundsEn: [
+      { name: 'Registration Deadline', date: '29 Aug to 14 Sep' },
+      { name: 'Preliminary Round', date: '26 & 27 September' },
+      { name: 'District Level Round', date: '2 to 4 October' },
+      { name: 'Grand Finale', date: '26 October' },
+    ],
+    contactsEn: [
+      { district: 'Dhule District', phone: '8208000141' },
+      { district: 'Jalgaon District', phone: '9373159728' },
+      { district: 'Malegaon District', phone: '9322141593' },
+      { district: 'Nandurbar District', phone: '9561927351' },
+    ],
+    languagesEn: ['Marathi', 'Ahirani', 'English'],
+    ageGroupsEn: ['14 to 18 Years', '18 to 25 Years', '25+ Open Category'],
   },
 ];
+

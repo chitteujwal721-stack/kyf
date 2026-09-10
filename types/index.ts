@@ -35,6 +35,21 @@ export interface EventItem {
   contacts?: { district: string; phone: string }[];
   languages?: string[];
   ageGroups?: string[];
+  
+  // English translations
+  titleEn?: string;
+  subtitleEn?: string;
+  descriptionEn?: string;
+  dateEn?: string;
+  timeEn?: string;
+  locationEn?: string;
+  entryFeeEn?: string;
+  prizesEn?: { title: string; amount: string }[];
+  topicsEn?: string[];
+  roundsEn?: { name: string; date: string }[];
+  contactsEn?: { district: string; phone: string }[];
+  languagesEn?: string[];
+  ageGroupsEn?: string[];
 }
 
 export interface TeamMember {

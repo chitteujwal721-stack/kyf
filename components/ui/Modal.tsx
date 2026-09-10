@@ -44,7 +44,7 @@ export default function Modal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
@@ -53,21 +53,22 @@ export default function Modal({
 
       {/* Modal Dialog */}
       <div
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-white rounded-2xl shadow-2xl z-10 overflow-hidden transform transition-all my-8`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-white rounded-2xl shadow-2xl z-10 overflow-hidden transform transition-all my-4 sm:my-8`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-stone-200 bg-stone-50">
-          <h3 className="text-xl font-bold text-stone-900">{title || ''}</h3>
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-stone-200 bg-stone-50">
+          <h3 className="text-lg sm:text-xl font-bold text-stone-900 pr-2">{title || ''}</h3>
           <button
             onClick={onClose}
-            className="text-stone-400 hover:text-stone-600 rounded-lg p-1.5 hover:bg-stone-200/60 transition-colors"
+            className="text-stone-500 hover:text-stone-800 rounded-xl p-2 hover:bg-stone-200/60 transition-colors"
+            aria-label="Close dialog"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="p-6 max-h-[75vh] overflow-y-auto">{children}</div>
+        <div className="p-4 sm:p-6 max-h-[80vh] overflow-y-auto">{children}</div>
       </div>
     </div>
   );
