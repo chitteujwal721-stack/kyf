@@ -4,14 +4,14 @@ export const initialEvents: EventItem[] = [
   {
     id: 'evt-shabdabhushan-2026',
     title: 'शब्दभूषण २०२६',
-    subtitle: 'खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा',
+    subtitle: 'खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा',
     description:
-      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.',
-    date: '२९ ऑगस्ट ते २६ ऑक्टोबर २०२६',
-    time: 'नोंदणी: २९ ऑगस्ट ते १४ सप्टेंबर',
+      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.',
+    date: '२९ ऑगस्ट ते २५ ऑक्टोबर २०२६',
+    time: 'नोंदणी: २९ ऑगस्ट ते २० सप्टेंबर (मुदतवाढ)',
     location: 'खान्देश (धुळे, जळगाव, मालेगाव, नंदुरबार)',
     category: 'Youth',
-    image: '/shabdabushan.png',
+    image: '/banner-marathi.png',
     status: 'Upcoming',
     featured: true,
     registrationUrl: 'https://forms.gle/xW3AqRnGNVKewGF4A',
@@ -27,12 +27,13 @@ export const initialEvents: EventItem[] = [
       'वृक्षवल्ली आम्हा सोयरे वनचरे : माझी वसुंधरा, माझं कुटुंब.',
       'शाश्वत विकास : विकसित खान्देशाचे महत्त्वपूर्ण उद्दिष्ट.',
       'आजचा युवक खान्देशाचे भविष्य : शेती, उद्योग आणि विकास.',
+      'शिक्षण हे वाघिणीचे दूध आहे: शिका, समृद्ध व्हा आणि देशाला नवी दिशा द्या.',
     ],
     rounds: [
-      { name: 'नोंदणी मुदत', date: '२९ ऑगस्ट ते १४ सप्टेंबर' },
+      { name: 'नोंदणी मुदतवाढ', date: '२९ ऑगस्ट ते २० सप्टेंबर' },
       { name: 'प्राथमिक फेरी', date: '२६ व २७ सप्टेंबर' },
       { name: 'जिल्हास्तरीय फेरी', date: '२ ते ४ ऑक्टोबर' },
-      { name: 'महाअंतिम फेरी', date: '२६ ऑक्टोबर' },
+      { name: 'महाअंतिम फेरी', date: '२५ ऑक्टोबर' },
     ],
     contacts: [
       { district: 'धुळे जिल्हा', phone: '8208000141' },
@@ -45,11 +46,11 @@ export const initialEvents: EventItem[] = [
 
     // Exact English details
     titleEn: 'Shabdabhushan 2026',
-    subtitleEn: "Khandesh's Grandest District Level Elocution & Oratory Competition",
+    subtitleEn: "Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition",
     descriptionEn:
-      'Organized by Khandesh Youth Foundation, the grandest district-level elocution competition in Khandesh. A prestigious platform designed to foster thought leadership, articulate oratorical skills, and youth empowerment.',
-    dateEn: '29 August to 26 October 2026',
-    timeEn: 'Registration: 29 Aug to 14 Sep',
+      'Organized by Khandesh Youth Foundation, the grandest Khandesh-level elocution competition. A prestigious platform designed to foster thought leadership, articulate oratorical skills, and youth empowerment.',
+    dateEn: '29 August to 25 October 2026',
+    timeEn: 'Registration: 29 Aug to 20 Sep (Extended)',
     locationEn: 'Khandesh (Dhule, Jalgaon, Malegaon, Nandurbar)',
     entryFeeEn: '₹150/-',
     prizesEn: [
@@ -63,12 +64,13 @@ export const initialEvents: EventItem[] = [
       'Trees and nature are our kin: My Earth, My Family.',
       'Sustainable Development: A crucial goal for a developed Khandesh.',
       "Today's Youth, Khandesh's Future: Agriculture, Industry, and Development.",
+      "Education is a tiger's boon: Educate, prosper and direct the nation.",
     ],
     roundsEn: [
-      { name: 'Registration Deadline', date: '29 Aug to 14 Sep' },
+      { name: 'Registration Deadline (Extended)', date: '29 Aug to 20 Sep' },
       { name: 'Preliminary Round', date: '26 & 27 September' },
       { name: 'District Level Round', date: '2 to 4 October' },
-      { name: 'Grand Finale', date: '26 October' },
+      { name: 'Grand Finale', date: '25 October' },
     ],
     contactsEn: [
       { district: 'Dhule District', phone: '8208000141' },

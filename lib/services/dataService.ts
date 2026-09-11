@@ -11,7 +11,7 @@ import {
 
 export const defaultNoticeSettings: NoticeSettings = {
   enabled: true,
-  text: '🚩 शब्दभूषण २०२६: जिल्हास्तरीय वक्तृत्व स्पर्धा! नोंदणी सुरू — अंतिम मुदत: १४ सप्टेंबर २०२६ | Shabdabhushan 2026: District Level Elocution Competition! Last Date: 14 Sep 2026. Click here to Register Now! 🏆',
+  text: '🚩 शब्दभूषण २०२६: भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा! नोंदणी मुदतवाढ २० सप्टेंबर २०२६ पर्यंत | Shabdabhushan 2026: Khandesh-Level Elocution Competition! Registration Extended till 20 Sep 2026. Click here to Register Now! 🏆',
   speed: 24,
   bgColor: '#5D3A1A',
   textColor: '#FDFBF7',

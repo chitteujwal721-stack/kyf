@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Khandesh Youth Foundation",
   shortName: "KHANDESH YOUTH FOUNDATION",
   logoUrl: "/logo.png",
-  tagline: "Empowering Youth. Transforming Society.",
+  tagline: "",
   description: "",
   email: "",
   phone: "+91 9421098906",

@@ -1,60 +1,60 @@
 import React from 'react';
 import Image from 'next/image';
 import PrimaryButton from '@/components/ui/PrimaryButton';
-import { ArrowRight, Heart, Users } from 'lucide-react';
+import { ArrowRight, IndianRupee, Heart, Users } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center bg-stone-950 text-white overflow-hidden py-14 sm:py-20">
-      {/* Background Image Overlay */}
+    <section className="relative min-h-[68vh] sm:min-h-[85vh] flex items-center justify-center bg-stone-950 text-white overflow-hidden py-8 sm:py-20">
+      {/* Background Image Overlay - tuned so the team photo background.png is beautifully framed and visible on both mobile and desktop */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bg1.png"
-          alt="KYF Community Work"
+          src="/background.png"
+          alt="KYF Team and Community Work"
           fill
-          className="object-cover object-center opacity-90 scale-105"
+          className="object-cover object-[center_60%] sm:object-[center_35%] opacity-100"
           priority
         />
-        {/* Soft subtle overlay so text is crisp while bg1 is fully visible and vibrant */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-900/40 to-stone-950/80 backdrop-brightness-90" />
+        {/* Balanced contrast overlay: top protects navbar/badge, clear bright center for team faces, bottom anchors trust bar */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/85 via-stone-950/25 to-stone-950/85 sm:from-stone-950/70 sm:via-stone-950/30 sm:to-stone-950/80" />
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* NGO Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-amber-200 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 rounded-full bg-stone-950/80 border border-white/25 backdrop-blur-md text-amber-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-6 shadow-lg">
           <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse shrink-0" />
           <span className="truncate">Non-Governmental Organization • Dhule</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-tight drop-shadow-md">
+        <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           Empowering Youth.
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 drop-shadow-sm">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
             Transforming Society.
           </span>
         </h1>
 
-        <p className="mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl text-stone-100 max-w-3xl mx-auto font-normal leading-relaxed drop-shadow-md px-2 sm:px-0">
+        <p className="mt-2.5 sm:mt-6 text-xs sm:text-xl md:text-2xl text-stone-100 max-w-3xl mx-auto font-normal leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] px-2 sm:px-0">
           {siteConfig.description}
         </p>
 
         {/* Action CTA Buttons */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md mx-auto sm:max-w-none">
-          <PrimaryButton href="/donate" variant="primary" size="lg" className="w-full sm:w-auto shadow-lg justify-center">
-            <Heart className="w-5 h-5 mr-2 fill-white/30" />
+        <div className="mt-5 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none mx-auto">
+          <PrimaryButton href="/donate" variant="primary" size="md" className="w-full sm:w-auto shadow-xl justify-center font-bold text-xs sm:text-base py-2.5 sm:py-3.5">
+            <IndianRupee className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 text-white" />
             <span>Support Our Cause</span>
           </PrimaryButton>
 
           <PrimaryButton
             href="/about"
             variant="outline"
-            size="lg"
-            className="w-full sm:w-auto border-white/60 text-white hover:bg-white/10 hover:border-white justify-center"
+            size="md"
+            className="w-full sm:w-auto border-white/80 text-white bg-black/30 hover:bg-white/20 hover:border-white justify-center backdrop-blur-xs font-bold text-xs sm:text-base py-2.5 sm:py-3.5"
           >
             <span>Learn About Us</span>
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5" />
           </PrimaryButton>
         </div>
 

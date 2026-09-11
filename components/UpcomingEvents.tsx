@@ -28,8 +28,15 @@ export default function UpcomingEvents() {
   const [events, setEvents] = useState<EventItem[]>(() => getEvents());
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
   const [previewPoster, setPreviewPoster] = useState<string | null>(null);
+  const [activeBanner, setActiveBanner] = useState<'marathi' | 'english' | 'portrait'>('marathi');
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [volunteerForm, setVolunteerForm] = useState({ name: '', phone: '', email: '', message: '' });
+
+  const bannerMap = {
+    marathi: '/banner-marathi.png',
+    english: '/banner-english.png',
+    portrait: '/banner-portrait.jpg',
+  };
 
   useEffect(() => {
     const handleDataChange = (e: Event) => {
@@ -59,9 +66,9 @@ export default function UpcomingEvents() {
   return (
     <Section id="events" bg="main" className="pt-8 pb-14 border-b border-amber-200/60">
       <SectionHeading
-        badge="🚩 भव्य जिल्हास्तरीय स्पर्धा • District Level Competition"
+        badge="🚩 भव्य खान्देशस्तरीय स्पर्धा • Khandesh-Level Competition"
         title="शब्दभूषण २०२६ • Shabdabhushan 2026"
-        subtitle="खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा | Khandesh's Grandest District Level Elocution & Oratory Competition"
+        subtitle="खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा | Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition"
       />
 
       <div className="space-y-8 max-w-6xl mx-auto">
@@ -71,47 +78,86 @@ export default function UpcomingEvents() {
             className="overflow-hidden border-2 border-amber-400/90 shadow-2xl bg-white rounded-3xl"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              {/* Poster Column */}
-              <div className="lg:col-span-5 bg-gradient-to-b from-[#1c120c] via-[#2d1c12] to-[#120a06] p-6 sm:p-8 flex flex-col items-center justify-between text-white relative">
-                <div className="w-full flex items-center justify-between z-10 mb-3">
+              {/* Poster Column with New Official Banners */}
+              <div className="lg:col-span-5 bg-gradient-to-b from-[#1c120c] via-[#2d1c12] to-[#120a06] p-4 sm:p-7 flex flex-col items-center justify-between text-white relative">
+                <div className="w-full flex items-center justify-between z-10 mb-2.5">
                   <span className="px-3 py-1 rounded-full text-[11px] font-black bg-amber-400 text-stone-950 flex items-center gap-1 shadow-md">
                     <Sparkles className="w-3.5 h-3.5 fill-stone-950" />
-                    जिल्हास्तरीय वक्तृत्व स्पर्धा
+                    खान्देशस्तरीय वक्तृत्व स्पर्धा
                   </span>
                   <Badge variant="primary">{event.category}</Badge>
                 </div>
 
+                {/* Banner Selector Tabs */}
+                <div className="w-full max-w-[340px] flex items-center justify-center gap-1 p-1 bg-black/50 rounded-xl mb-2 border border-amber-400/30">
+                  <button
+                    type="button"
+                    onClick={() => setActiveBanner('marathi')}
+                    className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                      activeBanner === 'marathi'
+                        ? 'bg-amber-400 text-stone-950 shadow-xs'
+                        : 'text-stone-300 hover:text-white'
+                    }`}
+                  >
+                    मराठी बॅनर
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveBanner('english')}
+                    className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                      activeBanner === 'english'
+                        ? 'bg-amber-400 text-stone-950 shadow-xs'
+                        : 'text-stone-300 hover:text-white'
+                    }`}
+                  >
+                    English Banner
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveBanner('portrait')}
+                    className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                      activeBanner === 'portrait'
+                        ? 'bg-amber-400 text-stone-950 shadow-xs'
+                        : 'text-stone-300 hover:text-white'
+                    }`}
+                  >
+                    उभा पोस्टर
+                  </button>
+                </div>
+
                 <div
-                  onClick={() => setPreviewPoster(event.image || '/shabdabushan.png')}
-                  className="relative w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-400/50 cursor-pointer group my-2"
+                  onClick={() => setPreviewPoster(bannerMap[activeBanner])}
+                  className={`relative w-full max-w-[340px] ${
+                    activeBanner === 'portrait' ? 'aspect-[3/4]' : 'aspect-[16/10.5]'
+                  } rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-400/50 cursor-pointer group my-1.5 bg-stone-950`}
                 >
                   <Image
-                    src={event.image || '/shabdabushan.png'}
-                    alt="शब्दभूषण २०२६ - Shabdabhushan 2026"
+                    src={bannerMap[activeBanner]}
+                    alt="शब्दभूषण २०२६ अधिकृत बॅनर"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 400px"
+                    sizes="(max-width: 1024px) 100vw, 420px"
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
                     priority
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-black text-xs gap-1.5 backdrop-blur-xs">
-                    <span>🔍 Click to View Full Poster</span>
+                    <span>🔍 Click to View Full Banner</span>
                   </div>
                 </div>
 
                 {/* Entry Fee Box */}
-                <div className="w-full max-w-[320px] py-2.5 px-4 rounded-xl bg-amber-400 text-stone-950 border border-amber-300 text-xs sm:text-sm font-black flex items-center justify-between mt-2 shadow-md">
+                <div className="w-full max-w-[340px] py-2 px-4 rounded-xl bg-amber-400 text-stone-950 border border-amber-300 text-xs sm:text-sm font-black flex items-center justify-between mt-2 shadow-md">
                   <span>नोंदणी शुल्क (Registration Fee)</span>
                   <span className="text-base font-black text-stone-950">₹१५०/-</span>
                 </div>
 
                 {/* Languages and Age group */}
-                <div className="w-full max-w-[320px] mt-3 grid grid-cols-2 gap-2 text-xs">
-                  <div className="p-2.5 rounded-xl bg-black/50 border border-amber-400/30 text-center">
-                    <span className="text-amber-300 font-black block mb-0.5">माध्यम (Languages)</span>
+                <div className="w-full max-w-[340px] mt-2.5 grid grid-cols-2 gap-2 text-xs">
+                  <div className="p-2 rounded-xl bg-black/50 border border-amber-400/30 text-center">
+                    <span className="text-amber-300 font-black block mb-0.5 text-[10px]">माध्यम (Languages)</span>
                     <span className="font-bold text-white text-[11px]">मराठी | अहिराणी | English</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-black/50 border border-amber-400/30 text-center">
-                    <span className="text-amber-300 font-black block mb-0.5">वयोगट (Age Groups)</span>
+                  <div className="p-2 rounded-xl bg-black/50 border border-amber-400/30 text-center">
+                    <span className="text-amber-300 font-black block mb-0.5 text-[10px]">वयोगट (Age Groups)</span>
                     <span className="font-bold text-white text-[11px]">14-18 | 18-25 | 25+ Open</span>
                   </div>
                 </div>
@@ -135,7 +181,7 @@ export default function UpcomingEvents() {
                   शब्दभूषण २०२६ • Shabdabhushan 2026
                 </h2>
                 <p className="text-sm sm:text-base font-extrabold text-[#5D3A1A] mb-4">
-                  खान्देशातील सर्वात भव्य जिल्हास्तरीय वक्तृत्व स्पर्धा • Khandesh&apos;s Grandest District Level Elocution Competition
+                  खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Khandesh&apos;s Grandest Khandesh-Level Elocution Competition
                 </p>
 
                 {/* Date & Location Bar */}
@@ -146,9 +192,9 @@ export default function UpcomingEvents() {
                     </div>
                     <div>
                       <span className="font-black block text-stone-950">
-                        कालावधी (Dates): २९ ऑगस्ट ते २६ ऑक्टोबर २०२६
+                        कालावधी (Dates): २९ ऑगस्ट ते २५ ऑक्टोबर २०२६
                       </span>
-                      <span className="text-stone-600 font-bold text-[11px]">29 August to 26 October 2026</span>
+                      <span className="text-stone-600 font-bold text-[11px]">29 August to 25 October 2026</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2.5">
@@ -172,28 +218,28 @@ export default function UpcomingEvents() {
                       भव्य रोख पारितोषिके • Prestigious Cash Prizes
                     </h4>
                   </div>
-                  <div className="grid grid-cols-3 gap-2.5 text-center">
-                    <div className="p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs">
-                      <p className="text-[11px] font-black text-stone-600 uppercase">
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
+                    <div className="px-1 py-2.5 sm:p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs flex flex-col justify-center">
+                      <p className="text-[10px] sm:text-[11px] font-black text-stone-600 uppercase truncate">
                         प्रथम / 1st Prize
                       </p>
-                      <p className="text-base sm:text-xl font-black text-[#5D3A1A] mt-0.5">
+                      <p className="text-xs sm:text-base md:text-xl font-black text-[#5D3A1A] mt-0.5 whitespace-nowrap tracking-tight sm:tracking-normal">
                         ₹१०,०००/-
                       </p>
                     </div>
-                    <div className="p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs">
-                      <p className="text-[11px] font-black text-stone-600 uppercase">
+                    <div className="px-1 py-2.5 sm:p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs flex flex-col justify-center">
+                      <p className="text-[10px] sm:text-[11px] font-black text-stone-600 uppercase truncate">
                         द्वितीय / 2nd Prize
                       </p>
-                      <p className="text-base sm:text-xl font-black text-[#5D3A1A] mt-0.5">
+                      <p className="text-xs sm:text-base md:text-xl font-black text-[#5D3A1A] mt-0.5 whitespace-nowrap tracking-tight sm:tracking-normal">
                         ₹७,०००/-
                       </p>
                     </div>
-                    <div className="p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs">
-                      <p className="text-[11px] font-black text-stone-600 uppercase">
+                    <div className="px-1 py-2.5 sm:p-3 rounded-2xl bg-white border-2 border-amber-300/80 shadow-xs flex flex-col justify-center">
+                      <p className="text-[10px] sm:text-[11px] font-black text-stone-600 uppercase truncate">
                         तृतीय / 3rd Prize
                       </p>
-                      <p className="text-base sm:text-xl font-black text-[#5D3A1A] mt-0.5">
+                      <p className="text-xs sm:text-base md:text-xl font-black text-[#5D3A1A] mt-0.5 whitespace-nowrap tracking-tight sm:tracking-normal">
                         ₹५,०००/-
                       </p>
                     </div>
@@ -254,6 +300,15 @@ export default function UpcomingEvents() {
                         <span className="text-stone-600 font-bold text-xs">Today&apos;s Youth, Khandesh&apos;s Future: Agriculture, Industry, and Development.</span>
                       </div>
                     </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-6 h-6 rounded-full bg-[#5D3A1A] text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5 shadow-xs">
+                        ६
+                      </span>
+                      <div className="leading-snug">
+                        <span className="font-black block text-stone-950 text-sm">शिक्षण हे वाघिणीचे दूध आहे: शिका, समृद्ध व्हा आणि देशाला नवी दिशा द्या.</span>
+                        <span className="text-stone-600 font-bold text-xs">Education is a tiger&apos;s boon: Educate, prosper and direct the nation.</span>
+                      </div>
+                    </li>
                   </ul>
                 </div>
 
@@ -268,12 +323,12 @@ export default function UpcomingEvents() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                     <div className="p-3 rounded-2xl bg-amber-100/90 border-2 border-amber-400 text-center shadow-xs">
                       <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-red-600 text-white mb-1">
-                        अंतिम मुदत: १४ सप्टें
+                        मुदतवाढ: २० सप्टें
                       </span>
-                      <p className="text-xs font-black text-stone-950">नोंदणी मुदत</p>
-                      <p className="text-[10px] text-stone-600 font-bold">Registration</p>
+                      <p className="text-xs font-black text-stone-950">नोंदणी मुदतवाढ</p>
+                      <p className="text-[10px] text-stone-600 font-bold">Extended Deadline</p>
                       <p className="text-xs font-black text-[#5D3A1A] mt-1">
-                        २९ ऑग - १४ सप्टें
+                        २९ ऑग - २० सप्टें
                       </p>
                     </div>
                     <div className="p-3 rounded-2xl bg-white border-2 border-stone-200 text-center shadow-xs">
@@ -294,7 +349,7 @@ export default function UpcomingEvents() {
                       <p className="text-xs font-black text-stone-950">महाअंतिम फेरी</p>
                       <p className="text-[10px] text-stone-600 font-bold">Grand Finale</p>
                       <p className="text-xs font-black text-[#5D3A1A] mt-1">
-                        २६ ऑक्टोबर
+                        २५ ऑक्टोबर
                       </p>
                     </div>
                   </div>
@@ -377,17 +432,62 @@ export default function UpcomingEvents() {
       <Modal
         isOpen={!!previewPoster}
         onClose={() => setPreviewPoster(null)}
-        title="शब्दभूषण २०२६ - स्पर्धा माहिती पोस्टर (Shabdabhushan 2026 Poster)"
+        title="शब्दभूषण २०२६ - अधिकृत स्पर्धा बॅनर व माहिती (Official Banners)"
+        maxWidth="2xl"
       >
         {previewPoster && (
-          <div className="space-y-4">
-            <div className="relative w-full max-w-lg mx-auto aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-300">
+          <div className="space-y-3">
+            {/* Banner switcher inside lightbox */}
+            <div className="flex items-center justify-center gap-1.5 pb-1">
+              <button
+                type="button"
+                onClick={() => setPreviewPoster('/banner-marathi.png')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                  previewPoster === '/banner-marathi.png'
+                    ? 'bg-[#5D3A1A] text-white shadow-md'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                }`}
+              >
+                मराठी बॅनर
+              </button>
+              <button
+                type="button"
+                onClick={() => setPreviewPoster('/banner-english.png')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                  previewPoster === '/banner-english.png'
+                    ? 'bg-[#5D3A1A] text-white shadow-md'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                }`}
+              >
+                English Banner
+              </button>
+              <button
+                type="button"
+                onClick={() => setPreviewPoster('/banner-portrait.jpg')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                  previewPoster === '/banner-portrait.jpg' || previewPoster === '/shabdabushan.png'
+                    ? 'bg-[#5D3A1A] text-white shadow-md'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                }`}
+              >
+                उभा पोस्टर (Portrait)
+              </button>
+            </div>
+
+            <div
+              className={`relative w-full mx-auto ${
+                previewPoster === '/banner-portrait.jpg' || previewPoster === '/shabdabushan.png'
+                  ? 'max-w-md aspect-[3/4]'
+                  : 'max-w-2xl aspect-[16/10.5]'
+              } rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-300 bg-stone-950`}
+            >
               <Image
                 src={previewPoster}
-                alt="Shabdbhushan 2026 Poster"
+                alt="Shabdbhushan 2026 Official Banner"
                 fill
-                sizes="(max-width: 768px) 100vw, 500px"
-                className="object-contain bg-stone-950"
+                sizes="(max-width: 768px) 100vw, 700px"
+                className="object-contain"
+                priority
               />
             </div>
             <div className="text-center pt-2">
@@ -395,7 +495,7 @@ export default function UpcomingEvents() {
                 href="https://forms.gle/xW3AqRnGNVKewGF4A"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#5D3A1A] hover:bg-[#422209] text-white px-6 py-3.5 rounded-xl font-black text-sm transition shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-[#5D3A1A] hover:bg-[#422209] text-white px-6 py-3 rounded-xl font-black text-xs sm:text-sm transition shadow-lg"
               >
                 <span>नोंदणी फॉर्मवर जा (Open Online Form)</span>
                 <ExternalLink className="w-4 h-4" />

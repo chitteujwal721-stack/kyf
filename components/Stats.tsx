@@ -5,9 +5,9 @@ export default function Stats() {
   const stats = [
     {
       icon: Users,
-      value: '90+',
+      value: '10000+',
       label: 'Youth Impacted',
-      description: 'Mentored through leadership and education drives',
+      description: '',
       color: 'text-sky-600 bg-sky-50',
     },
     {

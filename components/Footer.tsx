@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { getSiteSettings } from '@/lib/services/dataService';
 import {
-  Heart,
   Phone,
   Mail,
   MapPin,
@@ -52,15 +51,6 @@ export default function Footer() {
             <p className="text-stone-400 text-xs leading-relaxed font-light">
               Dedicated to youth mentoring, emergency blood donation drives, tree plantations, and education across Khandesh.
             </p>
-            <div className="pt-2">
-              <Link
-                href="/donate"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-white text-xs font-bold rounded-xl shadow-md hover:bg-[var(--color-primary-hover)] transition"
-              >
-                <Heart className="w-3.5 h-3.5 fill-white" />
-                <span>Support Our Cause</span>
-              </Link>
-            </div>
           </div>
 
           {/* Col 2: Quick Links */}
@@ -172,8 +162,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-3 text-center sm:text-left">
           <p>{config.footerText || `© ${new Date().getFullYear()} ${config.name}. All Rights Reserved.`}</p>
+          <p className="text-[11px] sm:text-xs text-stone-400">
+            Created by{' '}
+            <a
+              href="tel:8010177679"
+              className="text-stone-300 hover:text-amber-300 transition font-medium"
+            >
+              Ujwal Chitte - 8010177679
+            </a>
+          </p>
         </div>
       </div>
     </footer>

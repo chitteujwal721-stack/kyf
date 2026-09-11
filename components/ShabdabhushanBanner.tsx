@@ -32,12 +32,12 @@ export default function ShabdabhushanBanner() {
             <div className="mt-1 flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-xs sm:text-sm">
               <span className="inline-flex items-center gap-1.5 bg-red-600/90 hover:bg-red-600 text-white font-black px-3 py-1 rounded-lg border border-red-400/40 shadow-xs">
                 <Calendar className="w-4 h-4 shrink-0 text-amber-200" />
-                <span>अंतिम मुदत : १४ सप्टेंबर २०२६ (Last Date: 14 Sep 2026)</span>
+                <span>नोंदणी मुदतवाढ : २० सप्टेंबर २०२६ पर्यंत (Extended: 20 Sep 2026)</span>
               </span>
 
               <span className="inline-flex items-center gap-1 text-amber-200 font-bold bg-white/10 px-2.5 py-1 rounded-lg border border-white/15">
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>जिल्हास्तरीय स्पर्धा (District Level)</span>
+                <span>खान्देशस्तरीय स्पर्धा (Khandesh Level)</span>
               </span>
 
               <span className="inline-flex items-center gap-1 text-amber-200 font-bold bg-white/10 px-2.5 py-1 rounded-lg border border-white/15">
