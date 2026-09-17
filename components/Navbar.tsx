@@ -72,11 +72,10 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`px-3 py-2 rounded-xl text-sm font-semibold transition relative ${
-                isActive(link.href)
-                  ? 'text-[var(--color-primary)] font-bold'
-                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100/60'
-              }`}
+              className={`px-3 py-2 rounded-xl text-sm font-semibold transition relative ${isActive(link.href)
+                ? 'text-[var(--color-primary)] font-bold'
+                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100/60'
+                }`}
             >
               <span>{link.name}</span>
               {isActive(link.href) && (
@@ -96,7 +95,7 @@ export default function Navbar() {
           >
             <UserPlus className="w-4 h-4 shrink-0" />
             <span className="hidden md:inline">Become a</span>
-            <span>Volunteer</span>
+            <span>Member</span>
           </a>
 
           <PrimaryButton href="/donate" variant="primary" size="md" className="shadow-md text-xs md:text-sm px-3.5 py-2">
@@ -114,7 +113,7 @@ export default function Navbar() {
             className="sm:hidden inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold rounded-xl border border-emerald-600 text-emerald-700 hover:bg-emerald-50 transition"
           >
             <UserPlus className="w-3.5 h-3.5 shrink-0" />
-            <span>Volunteer</span>
+            <span>Member</span>
           </a>
 
           <PrimaryButton href="/donate" variant="primary" size="sm" className="sm:hidden px-2.5 py-1.5 text-xs">
@@ -162,11 +161,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-sm font-semibold transition ${
-                    isActive(link.href)
-                      ? 'bg-amber-50 text-[var(--color-primary)] font-bold'
-                      : 'text-stone-700 hover:bg-stone-50 active:bg-amber-100/50'
-                  }`}
+                  className={`px-4 py-3 rounded-xl text-sm font-semibold transition ${isActive(link.href)
+                    ? 'bg-amber-50 text-[var(--color-primary)] font-bold'
+                    : 'text-stone-700 hover:bg-stone-50 active:bg-amber-100/50'
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -182,7 +180,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <UserPlus className="w-4 h-4" />
-                <span>Become a Volunteer</span>
+                <span>Become a Member</span>
               </a>
 
               <PrimaryButton
