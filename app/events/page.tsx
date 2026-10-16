@@ -29,9 +29,10 @@ export default function EventsPage() {
   const [events, setEvents] = useState<EventItem[]>(() => getEvents());
   const [statusFilter, setStatusFilter] = useState<'All' | 'Upcoming' | 'Completed'>('All');
   const [previewPoster, setPreviewPoster] = useState<string | null>(null);
-  const [activeBanner, setActiveBanner] = useState<'marathi' | 'english' | 'portrait'>('marathi');
+  const [activeBanner, setActiveBanner] = useState<'finale' | 'marathi' | 'english' | 'portrait'>('finale');
 
   const bannerMap = {
+    finale: '/grand-finale.png',
     marathi: '/banner-marathi.png',
     english: '/banner-english.png',
     portrait: '/banner-portrait.jpg',
@@ -75,9 +76,15 @@ export default function EventsPage() {
             खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा | Khandesh&apos;s Grandest Khandesh-Level Elocution Competition
           </p>
 
-          <div className="mt-5 inline-flex items-center gap-2 bg-red-600 text-white font-black text-xs sm:text-sm px-4 py-2 rounded-xl border-2 border-red-400 shadow-md">
-            <Calendar className="w-4 h-4 text-amber-200" />
-            <span>नोंदणी सुरू आहे! मुदतवाढ : २० सप्टेंबर २०२६ पर्यंत (Extended till: 20 Sep 2026)</span>
+          <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-3">
+            <span className="inline-flex items-center gap-2 bg-amber-400 text-stone-950 font-black text-xs sm:text-sm px-4 py-2 rounded-xl shadow-md">
+              <Trophy className="w-4 h-4 text-stone-950" />
+              <span>महाअंतिम फेरी • २५ ऑक्टोबर २०२६ (Grand Finale)</span>
+            </span>
+            <span className="inline-flex items-center gap-2 bg-white/20 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-xl border border-white/30 backdrop-blur-xs">
+              <MapPin className="w-4 h-4 text-amber-300" />
+              <span>ठिकाण: हिरे भवन, धुळे (Hire Bhavan, Dhule)</span>
+            </span>
           </div>
         </div>
       </section>
@@ -125,33 +132,44 @@ export default function EventsPage() {
                     </div>
 
                     {/* Banner Selector Tabs */}
-                    <div className="w-full max-w-[340px] flex items-center justify-center gap-1 p-1 bg-black/50 rounded-xl mb-2 border border-amber-400/30">
+                    <div className="w-full max-w-[340px] grid grid-cols-4 gap-1 p-1 bg-black/50 rounded-xl mb-2 border border-amber-400/30">
+                      <button
+                        type="button"
+                        onClick={() => setActiveBanner('finale')}
+                        className={`py-1 px-1 rounded-lg text-[9px] sm:text-[10px] font-black transition truncate ${
+                          activeBanner === 'finale'
+                            ? 'bg-amber-400 text-stone-950 shadow-xs'
+                            : 'text-stone-300 hover:text-white'
+                        }`}
+                      >
+                        महाअंतिम फेरी
+                      </button>
                       <button
                         type="button"
                         onClick={() => setActiveBanner('marathi')}
-                        className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                        className={`py-1 px-1 rounded-lg text-[9px] sm:text-[10px] font-black transition truncate ${
                           activeBanner === 'marathi'
                             ? 'bg-amber-400 text-stone-950 shadow-xs'
                             : 'text-stone-300 hover:text-white'
                         }`}
                       >
-                        मराठी बॅनर
+                        मराठी
                       </button>
                       <button
                         type="button"
                         onClick={() => setActiveBanner('english')}
-                        className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                        className={`py-1 px-1 rounded-lg text-[9px] sm:text-[10px] font-black transition truncate ${
                           activeBanner === 'english'
                             ? 'bg-amber-400 text-stone-950 shadow-xs'
                             : 'text-stone-300 hover:text-white'
                         }`}
                       >
-                        English Banner
+                        English
                       </button>
                       <button
                         type="button"
                         onClick={() => setActiveBanner('portrait')}
-                        className={`flex-1 py-1 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-black transition ${
+                        className={`py-1 px-1 rounded-lg text-[9px] sm:text-[10px] font-black transition truncate ${
                           activeBanner === 'portrait'
                             ? 'bg-amber-400 text-stone-950 shadow-xs'
                             : 'text-stone-300 hover:text-white'
@@ -164,33 +182,37 @@ export default function EventsPage() {
                     <div
                       onClick={() => setPreviewPoster(bannerMap[activeBanner])}
                       className={`relative w-full max-w-[340px] ${
-                        activeBanner === 'portrait' ? 'aspect-[3/4]' : 'aspect-[16/10.5]'
+                        activeBanner === 'finale'
+                          ? 'aspect-[4/5]'
+                          : activeBanner === 'portrait'
+                          ? 'aspect-[3/4]'
+                          : 'aspect-[16/10.5]'
                       } rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-400/60 cursor-pointer group-hover:scale-[1.02] transition-transform duration-300 my-1.5 bg-stone-950`}
                     >
                       <Image
                         src={bannerMap[activeBanner]}
-                        alt="शब्दभूषण २०२६ अधिकृत बॅनर"
+                        alt="शब्दभूषण २०२६ अधिकृत पोस्टर"
                         fill
                         sizes="(max-width: 1024px) 100vw, 420px"
                         className="object-contain"
                         priority
                       />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-black text-sm gap-2 backdrop-blur-xs">
-                        <span>🔍 Click to View Full Banner</span>
+                        <span>🔍 Click to View Full Poster</span>
                       </div>
                     </div>
 
                     <button
                       onClick={() => setPreviewPoster(bannerMap[activeBanner])}
-                      className="text-amber-300 font-bold text-xs mt-1.5 flex items-center gap-1 hover:underline"
+                      className="text-amber-300 font-bold text-xs mt-1.5 flex items-center gap-1 hover:underline cursor-pointer"
                     >
-                      <span>🔍 Click banner to view in high resolution</span>
+                      <span>🔍 Click poster to view in high resolution</span>
                     </button>
 
-                    {/* Entry Fee Highlight */}
-                    <div className="mt-4 w-full max-w-[320px] py-2.5 px-4 rounded-xl bg-amber-400 text-stone-950 border-2 border-amber-300 text-xs sm:text-sm font-black flex items-center justify-between shadow-md">
-                      <span>नोंदणी शुल्क (Registration Fee)</span>
-                      <span className="text-base font-black text-stone-950">₹१५०/-</span>
+                    {/* Grand Finale Date & Venue Highlight */}
+                    <div className="mt-4 w-full max-w-[320px] py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 border-2 border-amber-300 text-xs sm:text-sm font-black flex items-center justify-between shadow-md">
+                      <span>महाअंतिम फेरी (Grand Finale)</span>
+                      <span className="text-xs sm:text-sm font-black text-stone-950">२५ ऑक्टोबर २०२६</span>
                     </div>
 
                     {/* Languages & Age Group */}
@@ -213,27 +235,27 @@ export default function EventsPage() {
                       <span className="text-xs font-black uppercase tracking-wider text-amber-900 bg-amber-100/80 px-3 py-1 rounded-lg border border-amber-300">
                         खान्देश युथ फाउंडेशन आयोजित • Organised by KYF
                       </span>
-                      <span className="px-3.5 py-1 rounded-full text-xs font-black bg-emerald-600 text-white shadow-xs flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span>नोंदणी सुरू (Registration Open)</span>
+                      <span className="px-3.5 py-1 rounded-full text-xs font-black bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 shadow-xs flex items-center gap-1.5">
+                        <Trophy className="w-3.5 h-3.5 text-stone-950" />
+                        <span>महाअंतिम फेरी (Grand Finale)</span>
                       </span>
                     </div>
 
                     {/* Main Title & Subtitle */}
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-stone-950 mb-1 leading-tight">
-                      शब्दभूषण २०२६ • Shabdabhushan 2026
+                      शब्दभूषण २०२६ • महाअंतिम फेरी
                     </h2>
                     <p className="text-base sm:text-lg font-extrabold text-[#5D3A1A] mb-4">
-                      खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Khandesh&apos;s Grandest Khandesh-Level Elocution Competition
+                      खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale 2026
                     </p>
 
                     {/* Overview Box */}
                     <div className="mb-5 p-3.5 rounded-2xl bg-amber-50/80 border-2 border-amber-200/80">
                       <p className="text-stone-950 font-bold text-sm leading-relaxed">
-                        खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.
+                        खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धेची महाअंतिम फेरी. खान्देशातील सर्वोत्कृष्ट वक्ते आता महाअंतिम फेरीत आमनेसामने!
                       </p>
                       <p className="text-stone-700 font-semibold text-xs mt-1.5 italic">
-                        (A premier Khandesh-level oratorical competition designed to empower youth, hone leadership, and foster articulation across Khandesh.)
+                        (Grand Finale of Khandesh&apos;s grandest elocution competition bringing together the finest young orators from across the region.)
                       </p>
                     </div>
 
@@ -245,9 +267,9 @@ export default function EventsPage() {
                         </div>
                         <div>
                           <span className="font-black block text-stone-950">
-                            कालावधी : २९ ऑगस्ट ते २५ ऑक्टोबर
+                            दिनांक : २५ ऑक्टोबर २०२६
                           </span>
-                          <span className="text-stone-600 font-bold text-[11px]">29 August to 25 October 2026</span>
+                          <span className="text-stone-600 font-bold text-[11px]">वेळ : सकाळी ८ ते संध्या. ६ (Sunday)</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-2.5">
@@ -256,9 +278,9 @@ export default function EventsPage() {
                         </div>
                         <div>
                           <span className="font-black block text-stone-950">
-                            जिल्हे : धुळे, जळगाव, मालेगाव, नंदुरबार
+                            ठिकाण : हिरे भवन, धुळे
                           </span>
-                          <span className="text-stone-600 font-bold text-[11px]">Khandesh Region (North Maharashtra)</span>
+                          <span className="text-stone-600 font-bold text-[11px]">सहकार्य : धुळे मनपा व दैनिक सकाळ</span>
                         </div>
                       </div>
                     </div>
@@ -374,35 +396,44 @@ export default function EventsPage() {
                         </h3>
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                        <div className="p-3 rounded-2xl bg-amber-100/90 border-2 border-amber-400 text-center shadow-xs">
-                          <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-red-600 text-white mb-1">
-                            मुदतवाढ: २० सप्टें
+                        <div className="p-3 rounded-2xl bg-stone-100 border-2 border-stone-200 text-center shadow-xs opacity-80">
+                          <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-stone-500 text-white mb-1">
+                            पूर्ण (Closed)
                           </span>
-                          <p className="text-xs font-black text-stone-950">नोंदणी मुदतवाढ</p>
-                          <p className="text-[10px] text-stone-600 font-bold">Extended Deadline</p>
-                          <p className="text-xs font-black text-[#5D3A1A] mt-1">
+                          <p className="text-xs font-black text-stone-950">नोंदणी फेरी</p>
+                          <p className="text-[10px] text-stone-600 font-bold">Registration</p>
+                          <p className="text-xs font-black text-stone-700 mt-1">
                             २९ ऑग - २० सप्टें
                           </p>
                         </div>
-                        <div className="p-3 rounded-2xl bg-white border-2 border-stone-200 text-center shadow-xs">
+                        <div className="p-3 rounded-2xl bg-stone-100 border-2 border-stone-200 text-center shadow-xs opacity-80">
+                          <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-stone-500 text-white mb-1">
+                            पूर्ण (Completed)
+                          </span>
                           <p className="text-xs font-black text-stone-950">प्राथमिक फेरी</p>
                           <p className="text-[10px] text-stone-600 font-bold">Preliminary Round</p>
-                          <p className="text-xs font-black text-[#5D3A1A] mt-1">
+                          <p className="text-xs font-black text-stone-700 mt-1">
                             २६ व २७ सप्टेंबर
                           </p>
                         </div>
-                        <div className="p-3 rounded-2xl bg-white border-2 border-stone-200 text-center shadow-xs">
+                        <div className="p-3 rounded-2xl bg-stone-100 border-2 border-stone-200 text-center shadow-xs opacity-80">
+                          <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-stone-500 text-white mb-1">
+                            पूर्ण (Completed)
+                          </span>
                           <p className="text-xs font-black text-stone-950">जिल्हास्तरीय फेरी</p>
                           <p className="text-[10px] text-stone-600 font-bold">District Round</p>
-                          <p className="text-xs font-black text-[#5D3A1A] mt-1">
+                          <p className="text-xs font-black text-stone-700 mt-1">
                             २ ते ४ ऑक्टोबर
                           </p>
                         </div>
-                        <div className="p-3 rounded-2xl bg-white border-2 border-stone-200 text-center shadow-xs">
+                        <div className="p-3 rounded-2xl bg-amber-100 border-2 border-amber-400 text-center shadow-md relative ring-2 ring-amber-400/50">
+                          <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-red-600 text-white mb-1 animate-pulse">
+                            आगामी • Upcoming
+                          </span>
                           <p className="text-xs font-black text-stone-950">महाअंतिम फेरी</p>
                           <p className="text-[10px] text-stone-600 font-bold">Grand Finale</p>
                           <p className="text-xs font-black text-[#5D3A1A] mt-1">
-                            २५ ऑक्टोबर
+                            २५ ऑक्टोबर (हिरे भवन)
                           </p>
                         </div>
                       </div>
@@ -459,20 +490,21 @@ export default function EventsPage() {
                     {/* Action CTA Buttons */}
                     <div className="mt-auto pt-2 flex flex-col sm:flex-row items-center gap-3">
                       <a
-                        href="https://forms.gle/xW3AqRnGNVKewGF4A"
+                        href="https://maps.google.com/?q=Hire+Bhavan+Dhule"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#5D3A1A] to-[#422209] hover:from-[#422209] hover:to-[#2e1504] text-white px-6 py-4 rounded-2xl font-black text-sm sm:text-base tracking-wide transition transform hover:scale-[1.02] active:scale-[0.98] shadow-xl"
                       >
-                        <span>नोंदणी फॉर्म भरा (Online Registration Form)</span>
-                        <ExternalLink className="w-5 h-5 stroke-[2.5]" />
+                        <MapPin className="w-5 h-5 text-amber-300" />
+                        <span>कार्यक्रम स्थळ / नकाशा (Hire Bhavan, Dhule)</span>
+                        <ExternalLink className="w-4 h-4 stroke-[2.5]" />
                       </a>
 
                       <button
-                        onClick={() => setPreviewPoster(event.image || '/shabdabushan.png')}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-black text-sm border-2 border-stone-300 hover:bg-stone-100 text-stone-900 transition"
+                        onClick={() => setPreviewPoster(bannerMap[activeBanner])}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-black text-sm border-2 border-amber-400/80 bg-amber-400/10 hover:bg-amber-400/20 text-stone-950 transition cursor-pointer"
                       >
-                        <span>पोस्टर पहा (View Poster)</span>
+                        <span>🔍 पोस्टर पहा (View Poster)</span>
                       </button>
                     </div>
                   </div>
@@ -487,17 +519,28 @@ export default function EventsPage() {
       <Modal
         isOpen={!!previewPoster}
         onClose={() => setPreviewPoster(null)}
-        title="शब्दभूषण २०२६ - अधिकृत स्पर्धा बॅनर व माहिती (Official Banners)"
+        title="शब्दभूषण २०२६ - अधिकृत स्पर्धा पोस्टर व माहिती"
         maxWidth="2xl"
       >
         {previewPoster && (
           <div className="space-y-3">
             {/* Banner switcher inside lightbox */}
-            <div className="flex items-center justify-center gap-1.5 pb-1">
+            <div className="grid grid-cols-4 gap-1.5 pb-1">
+              <button
+                type="button"
+                onClick={() => setPreviewPoster('/grand-finale.png')}
+                className={`py-1.5 px-2 rounded-xl text-xs font-black transition truncate ${
+                  previewPoster === '/grand-finale.png'
+                    ? 'bg-[#5D3A1A] text-white shadow-md'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                }`}
+              >
+                महाअंतिम फेरी
+              </button>
               <button
                 type="button"
                 onClick={() => setPreviewPoster('/banner-marathi.png')}
-                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                className={`py-1.5 px-2 rounded-xl text-xs font-black transition truncate ${
                   previewPoster === '/banner-marathi.png'
                     ? 'bg-[#5D3A1A] text-white shadow-md'
                     : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
@@ -508,53 +551,63 @@ export default function EventsPage() {
               <button
                 type="button"
                 onClick={() => setPreviewPoster('/banner-english.png')}
-                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                className={`py-1.5 px-2 rounded-xl text-xs font-black transition truncate ${
                   previewPoster === '/banner-english.png'
                     ? 'bg-[#5D3A1A] text-white shadow-md'
                     : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
                 }`}
               >
-                English Banner
+                English
               </button>
               <button
                 type="button"
                 onClick={() => setPreviewPoster('/banner-portrait.jpg')}
-                className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                className={`py-1.5 px-2 rounded-xl text-xs font-black transition truncate ${
                   previewPoster === '/banner-portrait.jpg' || previewPoster === '/shabdabushan.png'
                     ? 'bg-[#5D3A1A] text-white shadow-md'
                     : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
                 }`}
               >
-                उभा पोस्टर (Portrait)
+                उभा पोस्टर
               </button>
             </div>
 
             <div
               className={`relative w-full mx-auto ${
-                previewPoster === '/banner-portrait.jpg' || previewPoster === '/shabdabushan.png'
+                previewPoster === '/grand-finale.png'
+                  ? 'max-w-md aspect-[4/5]'
+                  : previewPoster === '/banner-portrait.jpg' || previewPoster === '/shabdabushan.png'
                   ? 'max-w-md aspect-[3/4]'
                   : 'max-w-2xl aspect-[16/10.5]'
               } rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-300 bg-stone-950`}
             >
               <Image
                 src={previewPoster}
-                alt="Shabdbhushan 2026 Official Banner"
+                alt="Shabdabhushan 2026 Poster"
                 fill
                 sizes="(max-width: 768px) 100vw, 700px"
                 className="object-contain"
                 priority
               />
             </div>
-            <div className="text-center pt-2">
+            <div className="text-center pt-2 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="https://forms.gle/xW3AqRnGNVKewGF4A"
+                href="https://maps.google.com/?q=Hire+Bhavan+Dhule"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#5D3A1A] hover:bg-[#422209] text-white px-6 py-3 rounded-xl font-black text-xs sm:text-sm transition shadow-lg"
               >
-                <span>नोंदणी फॉर्मवर जा (Open Online Form)</span>
+                <MapPin className="w-4 h-4 text-amber-300" />
+                <span>कार्यक्रम स्थळ (Hire Bhavan, Dhule)</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
+              <button
+                type="button"
+                onClick={() => setPreviewPoster(null)}
+                className="inline-flex items-center justify-center px-5 py-3 rounded-xl font-black text-xs sm:text-sm bg-stone-200 text-stone-800 hover:bg-stone-300 transition cursor-pointer"
+              >
+                बंद करा (Close)
+              </button>
             </div>
           </div>
         )}

@@ -3,19 +3,19 @@ import { EventItem } from '@/types';
 export const initialEvents: EventItem[] = [
   {
     id: 'evt-shabdabhushan-2026',
-    title: 'शब्दभूषण २०२६',
-    subtitle: 'खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा',
+    title: 'शब्दभूषण २०२६ - महाअंतिम फेरी',
+    subtitle: 'खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale',
     description:
-      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा. वक्तृत्वातून विचारांची देवाणघेवाण, वैचारिक प्रगल्भता आणि युवक सक्षमीकरणासाठी एक भव्य व्यासपीठ.',
-    date: '२९ ऑगस्ट ते २५ ऑक्टोबर २०२६',
-    time: 'नोंदणी: २९ ऑगस्ट ते २० सप्टेंबर (मुदतवाढ)',
-    location: 'खान्देश (धुळे, जळगाव, मालेगाव, नंदुरबार)',
+      'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धेची महाअंतिम फेरी. खान्देशातील चारही जिल्ह्यांमधून (धुळे, जळगाव, मालेगाव, नंदुरबार) प्राथमिक व जिल्हा फेऱ्या पार पाडून निवडलेले सर्वोत्कृष्ट वक्ते आता महाअंतिम फेरीत आमनेसामने!',
+    date: '२५ ऑक्टोबर २०२६ (रविवार)',
+    time: 'सकाळी ८:०० ते संध्याकाळी ६:००',
+    location: 'हिरे भवन, धुळे (Hire Bhavan, Dhule)',
     category: 'Youth',
-    image: '/banner-marathi.png',
+    image: '/grand-finale.png',
     status: 'Upcoming',
     featured: true,
-    registrationUrl: 'https://forms.gle/xW3AqRnGNVKewGF4A',
-    entryFee: '₹१५०/-',
+    registrationUrl: '',
+    entryFee: 'प्रवेश विनामूल्य (सर्व रसिकांसाठी खुला)',
     prizes: [
       { title: 'प्रथम पारितोषिक', amount: '₹१०,०००/-' },
       { title: 'द्वितीय पारितोषिक', amount: '₹७,०००/-' },
@@ -30,10 +30,10 @@ export const initialEvents: EventItem[] = [
       'शिक्षण हे वाघिणीचे दूध आहे: शिका, समृद्ध व्हा आणि देशाला नवी दिशा द्या.',
     ],
     rounds: [
-      { name: 'नोंदणी मुदतवाढ', date: '२९ ऑगस्ट ते २० सप्टेंबर' },
-      { name: 'प्राथमिक फेरी', date: '२६ व २७ सप्टेंबर' },
-      { name: 'जिल्हास्तरीय फेरी', date: '२ ते ४ ऑक्टोबर' },
-      { name: 'महाअंतिम फेरी', date: '२५ ऑक्टोबर' },
+      { name: 'नोंदणी फेरी', date: '२९ ऑगस्ट ते २० सप्टेंबर (पूर्ण)' },
+      { name: 'प्राथमिक फेरी', date: '२६ व २७ सप्टेंबर (पूर्ण)' },
+      { name: 'जिल्हास्तरीय फेरी', date: '२ ते ४ ऑक्टोबर (पूर्ण)' },
+      { name: 'महाअंतिम फेरी', date: '२५ ऑक्टोबर २०२६ (हिरे भवन)' },
     ],
     contacts: [
       { district: 'धुळे जिल्हा', phone: '8208000141' },
@@ -45,14 +45,14 @@ export const initialEvents: EventItem[] = [
     ageGroups: ['१४ ते १८', '१८ ते २५', '२५+ खुला'],
 
     // Exact English details
-    titleEn: 'Shabdabhushan 2026',
-    subtitleEn: "Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition",
+    titleEn: 'Shabdabhushan 2026 - Grand Finale',
+    subtitleEn: "Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition • Grand Finale",
     descriptionEn:
-      'Organized by Khandesh Youth Foundation, the grandest Khandesh-level elocution competition. A prestigious platform designed to foster thought leadership, articulate oratorical skills, and youth empowerment.',
-    dateEn: '29 August to 25 October 2026',
-    timeEn: 'Registration: 29 Aug to 20 Sep (Extended)',
-    locationEn: 'Khandesh (Dhule, Jalgaon, Malegaon, Nandurbar)',
-    entryFeeEn: '₹150/-',
+      'Organized by Khandesh Youth Foundation, the Grand Finale of the grandest Khandesh-level elocution competition. The best speakers across Dhule, Jalgaon, Malegaon, and Nandurbar compete live at Hire Bhavan, Dhule!',
+    dateEn: '25 October 2026 (Sunday)',
+    timeEn: '8:00 AM to 6:00 PM',
+    locationEn: 'Hire Bhavan, Dhule',
+    entryFeeEn: 'Free Entry (Open for All Audience)',
     prizesEn: [
       { title: '1st Prize', amount: '₹10,000/-' },
       { title: '2nd Prize', amount: '₹7,000/-' },
@@ -67,10 +67,10 @@ export const initialEvents: EventItem[] = [
       "Education is a tiger's boon: Educate, prosper and direct the nation.",
     ],
     roundsEn: [
-      { name: 'Registration Deadline (Extended)', date: '29 Aug to 20 Sep' },
-      { name: 'Preliminary Round', date: '26 & 27 September' },
-      { name: 'District Level Round', date: '2 to 4 October' },
-      { name: 'Grand Finale', date: '25 October' },
+      { name: 'Registration Deadline', date: '29 Aug to 20 Sep (Completed)' },
+      { name: 'Preliminary Round', date: '26 & 27 September (Completed)' },
+      { name: 'District Level Round', date: '2 to 4 October (Completed)' },
+      { name: 'Grand Finale', date: '25 October 2026 (Hire Bhavan)' },
     ],
     contactsEn: [
       { district: 'Dhule District', phone: '8208000141' },
