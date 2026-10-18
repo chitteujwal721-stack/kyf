@@ -75,6 +75,17 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li key="become-member">
+                <a
+                  href={config.joinUsFormUrl || siteConfig.joinUsFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 text-amber-300/90 font-semibold transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-amber-400" />
+                  <span>Become a Member (सदस्य व्हा)</span>
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -9,6 +9,7 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Modal from '@/components/ui/Modal';
 import VolunteerCTA from '@/components/VolunteerCTA';
+import EventsGallerySlider from '@/components/EventsGallerySlider';
 import { getEvents } from '@/lib/services/dataService';
 import { EventItem } from '@/types';
 import Image from 'next/image';
@@ -514,6 +515,9 @@ export default function EventsPage() {
           </div>
         )}
       </Section>
+
+      {/* Events Photo Gallery Slider */}
+      <EventsGallerySlider />
 
       {/* Poster Lightbox Modal */}
       <Modal

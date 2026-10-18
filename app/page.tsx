@@ -4,6 +4,7 @@ import NoticeBar from '@/components/NoticeBar';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import About from '@/components/About';
+import EventsGallerySlider from '@/components/EventsGallerySlider';
 
 import ShabdabhushanBanner from '@/components/ShabdabhushanBanner';
 import VolunteerCTA from '@/components/VolunteerCTA';
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <About />
+      <EventsGallerySlider />
 
       <VolunteerCTA />
       <Footer />

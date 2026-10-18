@@ -7,8 +7,10 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function About() {
   const highlights = [
-    'Registered non-profit youth organization committed to social service.',
-
+    'Youth-driven organization dedicated to empowering young minds and grassroots development.',
+    'Over 500 lives saved during the COVID-19 pandemic through timely emergency response.',
+    'Flagship youth platforms including Shabdabhushan (3 consecutive years) and Swarnaakshar.',
+    'Spanning 10 key sectors including education, healthcare, environment, and entrepreneurship.',
   ];
 
   return (

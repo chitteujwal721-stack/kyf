@@ -10,7 +10,7 @@ export const siteConfig = {
   altPhone: "",
   address: "Dhule, Maharashtra, India",
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14902.664408711463!2d74.7675765!3d20.9042225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd80693a1c6a2ad%3A0x6b4fb24e6446e507!2sDhule%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-  joinUsFormUrl: "https://forms.google.com",
+  joinUsFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdLYFj3wL_tsoYKJUWziYWzQJf_PXjR41qvZqHwlhxyXN0ZLQ/viewform",
   socialLinks: {
     instagram: "https://instagram.com/khandeshyouthfoundation",
     facebook: "https://facebook.com/khandeshyouthfoundation",

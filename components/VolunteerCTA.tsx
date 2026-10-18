@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '@/components/ui/Section';
 import PrimaryButton from '@/components/ui/PrimaryButton';
 import { siteConfig } from '@/config/site';
-import { IndianRupee, Sparkles } from 'lucide-react';
+import { IndianRupee, Sparkles, UserPlus } from 'lucide-react';
 
 export default function VolunteerCTA() {
   return (
@@ -21,7 +21,17 @@ export default function VolunteerCTA() {
           Whether you want to support blood donation camps, tree plantations, or rural student education — your contribution transforms lives.
         </p>
 
-        <div className="mt-6 sm:mt-8 flex items-center justify-center">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <a
+            href={siteConfig.joinUsFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-stone-950 font-black px-8 py-3.5 rounded-xl shadow-xl transition transform hover:scale-[1.02] active:scale-[0.98] text-sm sm:text-base"
+          >
+            <UserPlus className="w-5 h-5 text-stone-950" />
+            <span>Become a Member (सदस्य व्हा)</span>
+          </a>
+
           <PrimaryButton
             href="/donate"
             variant="outline"
