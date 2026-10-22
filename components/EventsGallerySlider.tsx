@@ -22,43 +22,53 @@ import 'swiper/css/pagination';
 export interface EventPhoto {
   id: number;
   src: string;
-  title: string;
 }
 
 export const eventPhotos: EventPhoto[] = [
-  { id: 1, src: '/eventsphoto/8.png', title: 'शब्दभूषण स्पर्धा क्षणचित्रे' },
-  { id: 2, src: '/eventsphoto/9.png', title: 'युवा सहभाग व वक्तृत्व सादरीकरण' },
-  { id: 3, src: '/eventsphoto/10.png', title: 'मान्यवरांचे मार्गदर्शन व सत्कार' },
-  { id: 4, src: '/eventsphoto/11.png', title: 'उपक्रम व गौरव सोहळा' },
-  { id: 5, src: '/eventsphoto/12.png', title: 'कार्यक्रमातील प्रेक्षक व श्रोते' },
-  { id: 6, src: '/eventsphoto/14.png', title: 'मंचावरील मान्यवर व उद्बोधन' },
-  { id: 7, src: '/eventsphoto/15.png', title: 'बक्षीस वितरण व सन्मान' },
-  { id: 8, src: '/eventsphoto/16.png', title: 'स्पर्धक व युवा नेते' },
-  { id: 9, src: '/eventsphoto/17.png', title: 'खान्देशस्तरीय व्यासपीठ' },
-  { id: 10, src: '/eventsphoto/18.png', title: 'संघटनात्मक कार्य व नियोजन' },
-  { id: 11, src: '/eventsphoto/19.png', title: 'युवा शक्तीचे दर्शन' },
-  { id: 12, src: '/eventsphoto/20.png', title: 'अमृतमहोत्सवी सोहळा व उपक्रम' },
-  { id: 13, src: '/eventsphoto/22.png', title: 'मान्यवरांच्या हस्ते गौरव' },
-  { id: 14, src: '/eventsphoto/23.png', title: 'स्पर्धेतील रंगतदार क्षण' },
-  { id: 15, src: '/eventsphoto/24.png', title: 'युवा व्याख्याते व मार्गदर्शक' },
-  { id: 16, src: '/eventsphoto/25.png', title: 'कार्यक्रमाचे यशस्वी आयोजन' },
-  { id: 17, src: '/eventsphoto/26.png', title: 'पारितोषिक वितरण सोहळा' },
-  { id: 18, src: '/eventsphoto/27.png', title: 'खान्देश युथ फाउंडेशन टीम' },
-  { id: 19, src: '/eventsphoto/28.png', title: 'दिलीप वळसे पाटील व मान्यवर' },
-  { id: 20, src: '/eventsphoto/29.png', title: 'उपस्थित जनसमुदाय व मान्यवर' },
-  { id: 21, src: '/eventsphoto/30.png', title: 'मंच संचालन व उपस्थिती' },
-  { id: 22, src: '/eventsphoto/34.png', title: 'दीपप्रज्वलन व उद्घाटन' },
-  { id: 23, src: '/eventsphoto/35.png', title: 'मान्यवर सत्कार व सन्मानचिन्ह' },
-  { id: 24, src: '/eventsphoto/36.png', title: 'युवा कार्यकर्त्यांचे संघटन' },
-  { id: 25, src: '/eventsphoto/37.png', title: 'स्मृतिचिन्ह व गौरव सोहळा' },
-  { id: 26, src: '/eventsphoto/38.png', title: 'कार्यक्रमाची भव्यता व शिस्त' },
-  { id: 27, src: '/eventsphoto/39.png', title: 'प्रमुख पाहुण्यांचे भाषण' },
-  { id: 28, src: '/eventsphoto/40.png', title: 'स्पर्धकांचा सन्मान' },
-  { id: 29, src: '/eventsphoto/41.png', title: 'खान्देशचा गौरव' },
-  { id: 30, src: '/eventsphoto/42.png', title: 'यशस्वी उपक्रमाची सांगता' },
-  { id: 31, src: '/eventsphoto/43.png', title: 'संवाद व समाजकार्य' },
-  { id: 32, src: '/eventsphoto/44.png', title: 'सामूहिक छायाचित्र व आठवणी' },
-  { id: 33, src: '/eventsphoto/45.png', title: 'एकजूट व समाज प्रबोधन' },
+  // New Flagship Photos Added
+  { id: 1, src: '/eventsphoto/46.png' },
+  { id: 2, src: '/eventsphoto/50.png' },
+  { id: 3, src: '/eventsphoto/51.png' },
+  { id: 4, src: '/eventsphoto/53.png' },
+  { id: 5, src: '/eventsphoto/49.png' },
+  { id: 6, src: '/eventsphoto/48.png' },
+  { id: 7, src: '/eventsphoto/47.png' },
+  { id: 8, src: '/eventsphoto/52.png' },
+
+  // Event Gallery Photos
+  { id: 9, src: '/eventsphoto/8.png' },
+  { id: 10, src: '/eventsphoto/9.png' },
+  { id: 11, src: '/eventsphoto/10.png' },
+  { id: 12, src: '/eventsphoto/11.png' },
+  { id: 13, src: '/eventsphoto/12.png' },
+  { id: 14, src: '/eventsphoto/14.png' },
+  { id: 15, src: '/eventsphoto/15.png' },
+  { id: 16, src: '/eventsphoto/16.png' },
+  { id: 17, src: '/eventsphoto/17.png' },
+  { id: 18, src: '/eventsphoto/18.png' },
+  { id: 19, src: '/eventsphoto/19.png' },
+  { id: 20, src: '/eventsphoto/20.png' },
+  { id: 21, src: '/eventsphoto/22.png' },
+  { id: 22, src: '/eventsphoto/23.png' },
+  { id: 23, src: '/eventsphoto/24.png' },
+  { id: 24, src: '/eventsphoto/25.png' },
+  { id: 25, src: '/eventsphoto/26.png' },
+  { id: 26, src: '/eventsphoto/27.png' },
+  { id: 27, src: '/eventsphoto/28.png' },
+  { id: 28, src: '/eventsphoto/29.png' },
+  { id: 29, src: '/eventsphoto/30.png' },
+  { id: 30, src: '/eventsphoto/34.png' },
+  { id: 31, src: '/eventsphoto/35.png' },
+  { id: 32, src: '/eventsphoto/36.png' },
+  { id: 33, src: '/eventsphoto/37.png' },
+  { id: 34, src: '/eventsphoto/38.png' },
+  { id: 35, src: '/eventsphoto/39.png' },
+  { id: 36, src: '/eventsphoto/40.png' },
+  { id: 37, src: '/eventsphoto/41.png' },
+  { id: 38, src: '/eventsphoto/42.png' },
+  { id: 39, src: '/eventsphoto/43.png' },
+  { id: 40, src: '/eventsphoto/44.png' },
+  { id: 41, src: '/eventsphoto/45.png' },
 ];
 
 interface EventsGallerySliderProps {
@@ -195,13 +205,13 @@ export default function EventsGallerySlider({
                   <div className="relative aspect-[4/3] w-full bg-stone-900 overflow-hidden">
                     <Image
                       src={photo.src}
-                      alt={photo.title}
+                      alt={`खान्देश युथ फाउंडेशन उपक्रम छायाचित्र ${photo.id}`}
                       fill
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover/card:scale-110"
                       loading={idx < 4 ? 'eager' : 'lazy'}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-black/20 to-transparent opacity-60 group-hover/card:opacity-90 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-black/10 to-transparent opacity-40 group-hover/card:opacity-80 transition-opacity" />
 
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-stone-950 text-xs font-black shadow-lg transform scale-90 group-hover/card:scale-100 transition-transform">
@@ -215,15 +225,6 @@ export default function EventsGallerySlider({
                         #{idx + 1}
                       </span>
                     </div>
-                  </div>
-
-                  <div className="p-3.5 bg-white border-t border-stone-100 flex items-center justify-between gap-2">
-                    <p className="text-xs sm:text-sm font-bold text-stone-800 line-clamp-1 group-hover/card:text-[#5D3A1A] transition-colors">
-                      {photo.title}
-                    </p>
-                    <span className="shrink-0 text-[10px] text-amber-600 font-extrabold flex items-center gap-0.5">
-                      KYF
-                    </span>
                   </div>
                 </div>
               </SwiperSlide>
@@ -250,9 +251,6 @@ export default function EventsGallerySlider({
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 rounded-full bg-amber-400 text-stone-950 font-black text-xs">
                 {lightboxIndex + 1} / {eventPhotos.length}
-              </span>
-              <span className="font-bold text-sm sm:text-base text-amber-100 truncate max-w-xs sm:max-w-md">
-                {eventPhotos[lightboxIndex].title}
               </span>
             </div>
 
@@ -289,7 +287,7 @@ export default function EventsGallerySlider({
             <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-amber-400/60 bg-stone-950 shadow-2xl">
               <Image
                 src={eventPhotos[lightboxIndex].src}
-                alt={eventPhotos[lightboxIndex].title}
+                alt={`खान्देश युथ फाउंडेशन उपक्रम छायाचित्र ${eventPhotos[lightboxIndex].id}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 className="object-contain"
@@ -307,15 +305,14 @@ export default function EventsGallerySlider({
               <button
                 key={p.id}
                 onClick={() => setLightboxIndex(i)}
-                className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden shrink-0 border-2 transition ${
-                  i === lightboxIndex
+                className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden shrink-0 border-2 transition ${i === lightboxIndex
                     ? 'border-amber-400 ring-2 ring-amber-400 scale-105'
                     : 'border-white/20 opacity-50 hover:opacity-100'
-                }`}
+                  }`}
               >
                 <Image
                   src={p.src}
-                  alt={p.title}
+                  alt={`छायाचित्र ${p.id}`}
                   fill
                   sizes="56px"
                   className="object-cover"

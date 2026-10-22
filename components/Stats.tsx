@@ -12,14 +12,14 @@ export default function Stats() {
     },
     {
       icon: HeartPulse,
-      value: '50+',
+      value: '1000+',
       label: 'Blood Units Collected',
       description: 'Saving critical lives in emergency blood drives',
       color: 'text-rose-600 bg-rose-50',
     },
     {
       icon: Trees,
-      value: '100+',
+      value: '2500+',
       label: 'Trees Planted',
       description: 'Native saplings planted across rural Khandesh',
       color: 'text-emerald-600 bg-emerald-50',
