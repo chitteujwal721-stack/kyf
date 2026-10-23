@@ -30,19 +30,24 @@ export default function ShabdabhushanBanner() {
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 font-black text-xs uppercase tracking-wider shadow-lg mb-3">
               <Trophy className="w-4 h-4 fill-stone-950 text-stone-950" />
-              <span>महाअंतिम फेरी • Grand Finale 2026</span>
+              <span>महाअंतिम फेरी • Grand Finale • Live Telecast 🔴</span>
               <Sparkles className="w-3.5 h-3.5 text-stone-950" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black text-white tracking-wide leading-tight">
-              <span>शब्दभूषण २०२६: महाअंतिम फेरी!</span>
+              <span>शब्दभूषण २०२६: महाअंतिम फेरी! (Live Telecast)</span>
             </h2>
             <p className="mt-1 text-amber-300 font-extrabold text-sm sm:text-base md:text-lg">
-              खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा • Grand Finale
+              खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा • Grand Finale • Live Telecast 🔴
             </p>
 
             {/* Event Key Details Pills */}
             <div className="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs sm:text-sm">
+              <span className="inline-flex items-center gap-1.5 bg-red-600 text-white font-black px-3 py-1.5 rounded-xl border border-red-400/60 shadow-md">
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                <span>Live Telecast (थेट प्रक्षेपण)</span>
+              </span>
+
               <span className="inline-flex items-center gap-1.5 bg-red-600 text-white font-black px-3 py-1.5 rounded-xl border border-red-400/60 shadow-md">
                 <Calendar className="w-4 h-4 shrink-0 text-amber-200" />
                 <span>दिनांक : २५ ऑक्टोबर २०२६ (रविवार)</span>

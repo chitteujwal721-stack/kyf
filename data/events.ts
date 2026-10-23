@@ -3,8 +3,8 @@ import { EventItem } from '@/types';
 export const initialEvents: EventItem[] = [
   {
     id: 'evt-shabdabhushan-2026',
-    title: 'शब्दभूषण २०२६ - महाअंतिम फेरी',
-    subtitle: 'खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale',
+    title: 'शब्दभूषण २०२६ - महाअंतिम फेरी (Live Telecast)',
+    subtitle: 'खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale • Live Telecast 🔴',
     description:
       'खान्देश युथ फाउंडेशन आयोजित खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धेची महाअंतिम फेरी. खान्देशातील चारही जिल्ह्यांमधून (धुळे, जळगाव, मालेगाव, नंदुरबार) प्राथमिक व जिल्हा फेऱ्या पार पाडून निवडलेले सर्वोत्कृष्ट वक्ते आता महाअंतिम फेरीत आमनेसामने!',
     date: '२५ ऑक्टोबर २०२६ (रविवार)',
@@ -33,7 +33,7 @@ export const initialEvents: EventItem[] = [
       { name: 'नोंदणी फेरी', date: '२९ ऑगस्ट ते २० सप्टेंबर (पूर्ण)' },
       { name: 'प्राथमिक फेरी', date: '२६ व २७ सप्टेंबर (पूर्ण)' },
       { name: 'जिल्हास्तरीय फेरी', date: '२ ते ४ ऑक्टोबर (पूर्ण)' },
-      { name: 'महाअंतिम फेरी', date: '२५ ऑक्टोबर २०२६ (हिरे भवन)' },
+      { name: 'महाअंतिम फेरी (Live Telecast)', date: '२५ ऑक्टोबर २०२६ (हिरे भवन)' },
     ],
     contacts: [
       { district: 'धुळे जिल्हा', phone: '8208000141' },
@@ -45,8 +45,8 @@ export const initialEvents: EventItem[] = [
     ageGroups: ['१४ ते १८', '१८ ते २५', '२५+ खुला'],
 
     // Exact English details
-    titleEn: 'Shabdabhushan 2026 - Grand Finale',
-    subtitleEn: "Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition • Grand Finale",
+    titleEn: 'Shabdabhushan 2026 - Grand Finale (Live Telecast)',
+    subtitleEn: "Khandesh's Grandest Khandesh-Level Elocution & Oratory Competition • Grand Finale • Live Telecast 🔴",
     descriptionEn:
       'Organized by Khandesh Youth Foundation, the Grand Finale of the grandest Khandesh-level elocution competition. The best speakers across Dhule, Jalgaon, Malegaon, and Nandurbar compete live at Hire Bhavan, Dhule!',
     dateEn: '25 October 2026 (Sunday)',
@@ -70,7 +70,7 @@ export const initialEvents: EventItem[] = [
       { name: 'Registration Deadline', date: '29 Aug to 20 Sep (Completed)' },
       { name: 'Preliminary Round', date: '26 & 27 September (Completed)' },
       { name: 'District Level Round', date: '2 to 4 October (Completed)' },
-      { name: 'Grand Finale', date: '25 October 2026 (Hire Bhavan)' },
+      { name: 'Grand Finale (Live Telecast)', date: '25 October 2026 (Hire Bhavan)' },
     ],
     contactsEn: [
       { district: 'Dhule District', phone: '8208000141' },

@@ -11,7 +11,7 @@ import {
 
 export const defaultNoticeSettings: NoticeSettings = {
   enabled: true,
-  text: '🏆 शब्दभूषण २०२६: खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा — महाअंतिम फेरी! दिनांक: २५ ऑक्टोबर २०२६ | वेळ: स. ८ ते सं. ६ | ठिकाण: हिरे भवन, धुळे | Shabdabhushan 2026 Grand Finale on 25 October 2026 at Hire Bhavan, Dhule! 🎉',
+  text: '🏆 शब्दभूषण २०२६: खान्देशातील सर्वात भव्य वक्तृत्व स्पर्धा — महाअंतिम फेरी (Live Telecast)! दिनांक: २५ ऑक्टोबर २०२६ | वेळ: स. ८ ते सं. ६ | ठिकाण: हिरे भवन, धुळे | Shabdabhushan 2026 Grand Finale • Live Telecast on 25 October 2026 at Hire Bhavan, Dhule! 🎉',
   speed: 24,
   bgColor: '#5D3A1A',
   textColor: '#FDFBF7',

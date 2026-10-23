@@ -80,7 +80,7 @@ export default function EventsPage() {
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-3">
             <span className="inline-flex items-center gap-2 bg-amber-400 text-stone-950 font-black text-xs sm:text-sm px-4 py-2 rounded-xl shadow-md">
               <Trophy className="w-4 h-4 text-stone-950" />
-              <span>महाअंतिम फेरी • २५ ऑक्टोबर २०२६ (Grand Finale)</span>
+              <span>महाअंतिम फेरी • २५ ऑक्टोबर २०२६ (Grand Finale) • Live Telecast 🔴</span>
             </span>
             <span className="inline-flex items-center gap-2 bg-white/20 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-xl border border-white/30 backdrop-blur-xs">
               <MapPin className="w-4 h-4 text-amber-300" />
@@ -212,7 +212,7 @@ export default function EventsPage() {
 
                     {/* Grand Finale Date & Venue Highlight */}
                     <div className="mt-4 w-full max-w-[320px] py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 border-2 border-amber-300 text-xs sm:text-sm font-black flex items-center justify-between shadow-md">
-                      <span>महाअंतिम फेरी (Grand Finale)</span>
+                      <span>महाअंतिम फेरी (Grand Finale) • Live Telecast 🔴</span>
                       <span className="text-xs sm:text-sm font-black text-stone-950">२५ ऑक्टोबर २०२६</span>
                     </div>
 
@@ -238,16 +238,16 @@ export default function EventsPage() {
                       </span>
                       <span className="px-3.5 py-1 rounded-full text-xs font-black bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 shadow-xs flex items-center gap-1.5">
                         <Trophy className="w-3.5 h-3.5 text-stone-950" />
-                        <span>महाअंतिम फेरी (Grand Finale)</span>
+                        <span>महाअंतिम फेरी (Grand Finale) • Live Telecast 🔴</span>
                       </span>
                     </div>
 
                     {/* Main Title & Subtitle */}
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-stone-950 mb-1 leading-tight">
-                      शब्दभूषण २०२६ • महाअंतिम फेरी
+                      शब्दभूषण २०२६ • महाअंतिम फेरी (Live Telecast)
                     </h2>
                     <p className="text-base sm:text-lg font-extrabold text-[#5D3A1A] mb-4">
-                      खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale 2026
+                      खान्देशातील सर्वात भव्य खान्देशस्तरीय वक्तृत्व स्पर्धा • Grand Finale 2026 • Live Telecast 🔴
                     </p>
 
                     {/* Overview Box */}
@@ -429,10 +429,10 @@ export default function EventsPage() {
                         </div>
                         <div className="p-3 rounded-2xl bg-amber-100 border-2 border-amber-400 text-center shadow-md relative ring-2 ring-amber-400/50">
                           <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-red-600 text-white mb-1 animate-pulse">
-                            आगामी • Upcoming
+                            🔴 Live Telecast
                           </span>
                           <p className="text-xs font-black text-stone-950">महाअंतिम फेरी</p>
-                          <p className="text-[10px] text-stone-600 font-bold">Grand Finale</p>
+                          <p className="text-[10px] text-amber-800 font-extrabold">Grand Finale • Live Telecast</p>
                           <p className="text-xs font-black text-[#5D3A1A] mt-1">
                             २५ ऑक्टोबर (हिरे भवन)
                           </p>

@@ -345,11 +345,14 @@ export default function UpcomingEvents() {
                         २ ते ४ ऑक्टोबर
                       </p>
                     </div>
-                    <div className="p-3 rounded-2xl bg-white border-2 border-stone-200 text-center shadow-xs">
+                    <div className="p-3 rounded-2xl bg-amber-100 border-2 border-amber-400 text-center shadow-md relative ring-2 ring-amber-400/50">
+                      <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black bg-red-600 text-white mb-1 animate-pulse">
+                        🔴 Live Telecast
+                      </span>
                       <p className="text-xs font-black text-stone-950">महाअंतिम फेरी</p>
-                      <p className="text-[10px] text-stone-600 font-bold">Grand Finale</p>
+                      <p className="text-[10px] text-amber-800 font-extrabold">Grand Finale • Live Telecast</p>
                       <p className="text-xs font-black text-[#5D3A1A] mt-1">
-                        २५ ऑक्टोबर
+                        २५ ऑक्टोबर (हिरे भवन)
                       </p>
                     </div>
                   </div>

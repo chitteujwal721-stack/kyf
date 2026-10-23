@@ -42,66 +42,67 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 transition-all ${scrolled ? 'shadow-md py-1' : 'shadow-xs py-1.5'}`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
-        {/* Logo and Foundation Name */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
-          <div className="relative h-10 sm:h-12 md:h-14 lg:h-16 w-24 sm:w-32 md:w-40 shrink-0">
+    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 transition-all ${scrolled ? 'shadow-md py-1' : 'shadow-xs py-2 sm:py-2.5'}`}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-22 sm:h-26 md:h-28 flex items-center justify-between gap-3 sm:gap-6">
+        {/* Left: Enlarged Logo and Foundation Title Beside It */}
+        <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-5 group shrink-0 min-w-0" aria-label="Khandesh Youth Foundation Home">
+          <div className="relative h-16 sm:h-20 md:h-22 lg:h-24 w-28 sm:w-36 md:w-44 lg:w-48 shrink-0 transition-transform duration-300 group-hover:scale-105">
             <Image
               src={siteConfig.logoUrl}
               alt={siteConfig.name}
               fill
-              sizes="(max-width: 640px) 100px, (max-width: 768px) 130px, 160px"
-              className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 112px, (max-width: 768px) 160px, 200px"
+              className="object-contain object-left"
               priority
             />
           </div>
-          <div className="hidden xl:flex flex-col border-l border-stone-200 pl-3">
-            <span className="font-extrabold text-sm lg:text-base text-stone-900 leading-none group-hover:text-[var(--color-primary)] transition truncate">
-              {siteConfig.shortName}
+          <div className="flex flex-col justify-center min-w-0">
+            <span className="font-serif font-black text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-stone-950 group-hover:text-[var(--color-primary)] transition tracking-tight leading-tight whitespace-nowrap">
+              Khandesh Youth Foundation
             </span>
-            <span className="text-[10px] font-semibold text-stone-500 tracking-wider uppercase mt-1">
-              {siteConfig.tagline}
+            <span className="text-[10px] sm:text-xs md:text-sm font-bold text-amber-900 tracking-wider uppercase mt-1 leading-tight">
+              खान्देश युथ फाउंडेशन • (KYF)
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`px-3 py-2 rounded-xl text-sm font-semibold transition relative ${isActive(link.href)
-                ? 'text-[var(--color-primary)] font-bold'
-                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100/60'
-                }`}
+        {/* Right: Desktop Navigation Links + CTA Buttons */}
+        <div className="hidden lg:flex items-center gap-2 xl:gap-4 shrink-0">
+          <nav className="flex items-center space-x-1" aria-label="Main Navigation">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`px-3 py-2 rounded-xl text-sm font-bold transition relative ${isActive(link.href)
+                  ? 'text-[var(--color-primary)] font-black'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-stone-100/70'
+                  }`}
+              >
+                <span>{link.name}</span>
+                {isActive(link.href) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--color-primary)] rounded-full" />
+                )}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2 xl:gap-2.5 pl-3 border-l border-stone-200">
+            <a
+              href={siteConfig.joinUsFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs"
             >
-              <span>{link.name}</span>
-              {isActive(link.href) && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--color-primary)] rounded-full" />
-              )}
-            </Link>
-          ))}
-        </nav>
+              <UserPlus className="w-4 h-4 shrink-0" />
+              <span className="hidden xl:inline">Become a</span>
+              <span>Member</span>
+            </a>
 
-        {/* Desktop Header CTA Buttons */}
-        <div className="hidden sm:flex items-center gap-2 md:gap-3 shrink-0">
-          <a
-            href={siteConfig.joinUsFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-2 md:px-3.5 md:py-2 rounded-xl text-xs md:text-sm font-bold border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs"
-          >
-            <UserPlus className="w-4 h-4 shrink-0" />
-            <span className="hidden md:inline">Become a</span>
-            <span>Member</span>
-          </a>
-
-          <PrimaryButton href="/donate" variant="primary" size="md" className="shadow-md text-xs md:text-sm px-3.5 py-2">
-            <IndianRupee className="w-4 h-4 text-white mr-1 shrink-0" />
-            <span>Donate Now</span>
-          </PrimaryButton>
+            <PrimaryButton href="/donate" variant="primary" size="md" className="shadow-md text-xs xl:text-sm px-3.5 py-2">
+              <IndianRupee className="w-4 h-4 text-white mr-1 shrink-0" />
+              <span>Donate</span>
+            </PrimaryButton>
+          </div>
         </div>
 
         {/* Mobile Menu & Action Buttons */}
@@ -136,23 +137,27 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-16 sm:top-20 bg-black/40 backdrop-blur-xs z-40 lg:hidden"
+            className="fixed inset-0 top-22 sm:top-26 md:top-28 bg-black/40 backdrop-blur-xs z-40 lg:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
           <div className="relative z-50 lg:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
-            <div className="flex items-center gap-3 pb-3 border-b border-stone-100 mb-2">
-              <div className="relative h-10 w-28 shrink-0">
+            <div className="flex items-center gap-3.5 pb-3 border-b border-stone-100 mb-2">
+              <div className="relative h-14 w-32 shrink-0">
                 <Image
                   src={siteConfig.logoUrl}
                   alt={siteConfig.name}
                   fill
-                  sizes="112px"
+                  sizes="128px"
                   className="object-contain object-left"
                 />
               </div>
               <div className="min-w-0">
-                <p className="font-bold text-sm text-stone-900 leading-none truncate">{siteConfig.shortName}</p>
-                <p className="text-[10px] text-stone-500 font-medium mt-0.5 truncate">{siteConfig.tagline}</p>
+                <p className="font-serif font-black text-base text-stone-950 leading-tight truncate">
+                  Khandesh Youth Foundation
+                </p>
+                <p className="text-xs text-amber-900 font-bold mt-0.5 truncate">
+                  खान्देश युथ फाउंडेशन • (KYF)
+                </p>
               </div>
             </div>
             <nav className="flex flex-col space-y-1">

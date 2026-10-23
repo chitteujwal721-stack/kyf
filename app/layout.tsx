@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon.png', type: 'image/png', sizes: '512x512' },
-      { url: '/logo.png', type: 'image/png' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
     ],
-    shortcut: '/logo.png',
+    shortcut: '/icon.png',
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {
